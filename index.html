@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Index</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="node_modules/highlight.js/styles/vs.css">
+        <link rel="stylesheet" href="node_modules/reveal.js/dist/theme/simple.css" id="theme">
+        <link rel="stylesheet" href="css/custom.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Hind:400,700|Open+Sans:400,400i,700');
+        </style>
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides" id="slidecontent">
+                
+                    
+                        
+    <section data-separator="^\n\n\n\n" data-separator-vertical="^\n\n\n" data-markdown="slides/index.md"></section>
+
+
+                    
+                    
+                
+            </div>
+        </div>
+        <script src="node_modules/reveal.js/dist/reveal.js"></script>
+        <script src="node_modules/reveal.js/plugin/highlight/highlight.js"></script>
+        <script src="node_modules/reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="node_modules/reveal.js/plugin/search/search.js"></script>
+        <script src="node_modules/reveal.js/plugin/notes/notes.js"></script>
+        <script src="node_modules/reveal.js/plugin/zoom/zoom.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/draggabilly/dist/draggabilly.pkgd.min.js"></script>
+        <script>
+            // Configure Reveal
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                width: 1000,
+                height: 700,
+                controls: true,
+                progress: true,
+                slideNumber: true,
+                history: true,
+                center: false,
+                pdfPageHeightOffset: 0,
+                pdfMaxPagesPerSlide: 1,
+                // Turns fragments on and off globally
+                fragments: true,
+                // Apply a 3D roll to links on hover
+                rollingLinks: false,
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                // Transition speed
+                transitionSpeed: 'fast', // default/fast/slow
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+                postMessage: true,
+                // Optional libraries used to extend on reveal.js
+                plugins: [RevealMarkdown, RevealHighlight, RevealSearch, RevealNotes, RevealZoom],
+                dependencies: [
+                    { src: 'js/loadhtmlslides.js', condition: function() { return !!document.querySelector( '[data-html]' ); }},
+                    { src: 'js/jsbin-embed.js', async: false },
+                    { src: 'js/sqltomarkdown.js', async: false },
+                    { src: 'js/sqlquery.js', async: false, callback: function(){SQLQuery.init();} },
+                    { src: 'js/toc.js', async: false},
+                    { src: 'js/htmlPreview.js', async: false},
+                    { src: 'js/sendToWebExplorer.js', async: false, callback: function(){}}
+                ]
+            });
+
+
+            $(document).ready(function () {
+              var title = document.title;
+              $('body').on('dblclick', 'code', function () {
+                $(this).attr('contenteditable', true);
+                $(this).attr('spellcheck', false);
+              });
+              Reveal.addEventListener("slidechanged",function(event){
+                var fullTitle = title + ': ' + $(event.currentSlide).find('h1, h2, h3').first().text()
+                document.title = fullTitle;
+                ga('send', 'pageview', {
+                  'page': window.location.pathname + window.location.search + '#' + event.indexh + '/' + event.indexv,
+                  'title': fullTitle
+                });
+              });
+            });
+        </script>
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-55173430-3', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+
+</html>
