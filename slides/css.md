@@ -1,5 +1,4 @@
-621-2.2 HTML
-
+64-31.1 Projet de technologie web
 <!-- .element: style="font-size:0.7em;margin:4em 0;" -->
 
 # CSS
@@ -913,5 +912,12 @@ body{ font-family: sans-serif; font-size: 20px; }
 
 ### Références supplémentaires
 
+* http://caniuse.com/
+* https://developer.mozilla.org/fr/docs/Web/HTML/Element
+* https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Les_blocs_de_formulaires_natifs
 * http://tympanus.net/codrops/css_reference/
+* https://developer.mozilla.org/fr/docs/Web/CSS/Reference
+* http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
+* http://css.sutterlity.fr/
 * http://fr.learnlayout.com/
+* https://developer.mozilla.org/fr/docs/CSS/Premiers_pas
