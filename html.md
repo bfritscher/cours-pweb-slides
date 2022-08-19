@@ -120,6 +120,7 @@ HTML [https://validator.w3.org/](https://validator.w3.org/)
 
 CSS [https://jigsaw.w3.org/css-validator/](https://jigsaw.w3.org/css-validator/)
 
+[Unicorn - Le Validateur unifié](https://validator.w3.org/unicorn/?ucn_lang=fr)
 
 
 
@@ -142,7 +143,7 @@ Une page HTML = un ensemble d’éléments de contenu encadrés par des balises 
 
 
 
-### Examples: `<h1>` `<h2>`, `<p>`
+### Exemples: `<h1>` `<h2>`, `<p>`
 
 Des éléments de titres:
 ```html
@@ -170,7 +171,7 @@ Un élément paragraphe:
 
 
 
-### Examples `<br>`, `<hr>`
+### Exemples `<br>`, `<hr>`
 
 Un élément peut n'avoir aucun contenu:
 
@@ -221,11 +222,11 @@ id et class existe sur toutes les balises et sont utilisées pour du CSS.
 
 
 
-### Examples: `<img>`
+### Exemples: `<img>`
 
 
 ```html
-<img src="grumpy_cat.jpg"  alt="photo de Grumpy Cat" />
+<img src="images/grumpy_cat.jpg"  alt="photo de Grumpy Cat" />
 ```
 
 <!-- .element: class="html-preview output-right output-w-20" -->
