@@ -14,11 +14,14 @@
 * [*Introduction*](intro.html)
 * [*HTML*](html.html)
 * [*CSS*](css.html)
+* [*HTML - Form*](form.html)
 * [*JavaScript*](javascript.html)
 * [*Vue.js*](vuejs.html)
 
 More
 <!-- .element class="center small" -->
-* [*HTML & CSS Summary*](html_css_summary.html)
+* [*HTML & CSS - Summary*](html_css_summary.html)
+* [*GIT -  Summary*](git_summary.html)
+* [*JavaScript - Extended*](javascript_extended.html)
 
 <!-- .element class="small" -->
