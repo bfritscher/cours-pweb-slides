@@ -544,94 +544,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 
 
-### DOM Document
-
-```javascript
-// access body Element
-const element = document.body;
-
-// find element(s)
-const element = document.getElementById("some_id");
-
-// returns an Element
-const parentElement = document.querySelector("ul");
-
-// returns an iterable of Elements
-const elements = document.querySelectorAll("li");
-const element = elements[0];
-
-// create a new element
-const element = document.createElement("div");
-
-// add to DOM
-parentElement.append(element);
-```
-
-https://github.com/oneuijs/You-Dont-Need-jQuery
-<!-- .element class="small" -->
-
-
-
-### DOM Element
-
-```javascript
-// edit classes
-element.classList.add("big");
-element.classList.remove("big");
-element.classList.toggle("big");
-
-// edit content
-const value = element.innerText;
-element.innerText = "some text";
-element.innerHTML = "text with <b>HTML</b>";
-
-// edit attributes
-const value = element.getAttribute("src");
-element.setAttribute("src", "https://...");
-
-// events: click, dblclick, change, keydown, mouseenter, mouseleave
-element.addEventListener('click', () => {
-  // handler function
-  // do something
-});
-```
-
-
-
-```html
-<!DOCTYPE html>
-<html>
-<body onload="onload()">
-  <ul class="list">
-    <li>a</li>
-    <li>b</li>
-  </ul>
-</body>
-</html>
-```
-
-```css
-.big{
-  font-size: 200%;
-}
-```
-
-```javascript
-function onload() {
-  const div = document.createElement('div');
-  div.innerText = 'Hello';
-  document.body.append(div);
-
-  for (const li of document.querySelectorAll('.list li')) {
-    li.addEventListener('click', () => {
-      li.classList.toggle('big');
-    })
-  }
-}
-```
-
-
-
 ## ECMAScript 2015-2016
 
 - Module
@@ -790,6 +702,96 @@ https://github.com/DrkSephy/es6-cheatsheet<br/>
 https://babeljs.io/learn-es2015/
 
 <!-- .element: class="credits" -->
+
+
+
+
+### DOM Document
+
+```javascript
+// access body Element
+const element = document.body;
+
+// find element(s)
+const element = document.getElementById("some_id");
+
+// returns an Element
+const parentElement = document.querySelector("ul");
+
+// returns an iterable of Elements
+const elements = document.querySelectorAll("li");
+const element = elements[0];
+
+// create a new element
+const element = document.createElement("div");
+
+// add to DOM
+parentElement.append(element);
+```
+
+https://github.com/oneuijs/You-Dont-Need-jQuery
+<!-- .element class="small" -->
+
+
+
+### DOM Element
+
+```javascript
+// edit classes
+element.classList.add("big");
+element.classList.remove("big");
+element.classList.toggle("big");
+
+// edit content
+const value = element.innerText;
+element.innerText = "some text";
+element.innerHTML = "text with <b>HTML</b>";
+
+// edit attributes
+const value = element.getAttribute("src");
+element.setAttribute("src", "https://...");
+
+// events: click, dblclick, change, keydown, mouseenter, mouseleave
+element.addEventListener('click', () => {
+  // handler function
+  // do something
+});
+```
+
+
+
+```html
+<!DOCTYPE html>
+<html>
+<body onload="onload()">
+  <ul class="list">
+    <li>a</li>
+    <li>b</li>
+  </ul>
+</body>
+</html>
+```
+
+```css
+.big{
+  font-size: 200%;
+}
+```
+
+```javascript
+function onload() {
+  const div = document.createElement('div');
+  div.innerText = 'Hello';
+  document.body.append(div);
+
+  for (const li of document.querySelectorAll('.list li')) {
+    li.addEventListener('click', () => {
+      li.classList.toggle('big');
+    })
+  }
+}
+```
+
 
 
 
