@@ -727,6 +727,9 @@ const element = document.createElement("div");
 
 // add to DOM
 parentElement.append(element);
+
+// Page ready
+document.addEventListener('DOMContentLoaded', function() {});
 ```
 
 https://github.com/oneuijs/You-Dont-Need-jQuery
