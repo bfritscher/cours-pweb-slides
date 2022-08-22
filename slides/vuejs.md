@@ -13,11 +13,7 @@
 [Boris.Fritscher@he-arc.ch](mailto:Boris.Fritscher@he-arc.ch)
 <!-- .element style="position:absolute; bottom:20px; left:0;" class="nopdf" -->
 
-#### Part 2: Build and deploy a Single Page Application
-
-#### Vue.js
-
-
+#### Build and deploy a Single Page Application
 
 
 
@@ -36,22 +32,14 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 
 ![](images/webstorm.png)<!-- .element: class="w-60 float-left" -->
 
-In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Atom](https://atom.io/)
+In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Brackets](https://brackets.io/)
 <br/>Online editors: [CodeSandbox](https://codesandbox.io), [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
 
 
-![](images/web_dev_in_2021_intro.png)<!-- .element: class="w-100" -->
-
-https://github.com/kamranahmedse/developer-roadmap
-
-<!-- .element: class="credits" -->
-
-
-
-![](images/web_dev_in_2021_frontend.png)<!-- .element: class="w-80" -->
+<iframe src="https://roadmap.sh/frontend" width="100%" height="100%"></iframe>
 
 <!-- .element: class="center" -->
 
@@ -89,11 +77,6 @@ A preprocessor is a program that processes its input data to produce output, tha
 
 
 
-![](images/Strip-Pepperidge-farm-650-final.jpg)
-
-
-
-
 ## Node.js & npm
 
 ![](images/nodejs-logo.png) <!-- .element: class="float-right w-15" -->
@@ -109,27 +92,22 @@ https://www.npmjs.com/
 
 
 
-## WebPack
+## Vite
 
-Webpack is an open-source JavaScript module bundler. Webpack takes modules with dependencies and generates static assets representing those modules.
+![](images/logo-with-shadow.png) <!-- .element: class="float-left w-15" -->
 
-![](images/webpack-process.svg)
+Is a build tool that aims to provide a faster and leaner development experience for modern web projects. It consists of two major parts:
 
-<!-- .element: class="float-right w-60" -->
-
-It takes the dependencies and generates a dependency graph allowing web developers to use a modular approach for their web application development purposes.
-
-<!-- .element: class="smaller" -->
-
-WebPack Loader plugins help to pre/postprocess files without needing a tasks pipeline.
-
-<!-- .element: class="smaller" -->
+* A dev server (Hot Module Replacement / Reload)
+* A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets for production.
+* Project Tempaltes for vue, react, ...
 
 
 
-## Lab 1a: MonCV
 
-Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
+## Lab 1: Vue.js
+
+Setup a local Vue.js project with deployment to GitHub
 
 ![](images/yeoman-packages.png)<!-- .element: class="w-30" -->
 
@@ -139,25 +117,21 @@ Creating a Curriculum vitae webpage, using Boostrap CSS and development tools.
 
 Download and install [Node.js](https://nodejs.org/) to get `npm`.
 
-Use `npm` to install `vue-cli` globally (--global or -g)
+Download and install [Git](https://git-scm.com/download/win) to get `git`.
 
-```sh
-$ npm install -g @vue/cli
-```
-*We are using the -g (--global flag) to install in the global shared space accessible to all projects.*
-<!-- .element: class="small" -->
+Download and install [Visual Studio Code](https://code.visualstudio.com/) to get `code`.
 
 
 
 ### Step 1: Create a new project
 
-Use vue-cli to create a new project.
+Use vue/vite to create a new project.
 
 ```sh
-$ vue create moncv
+$ npm init vue@latest
 ```
 
-![](images/vue-cli-moncv.png)<!-- .element: class="w-80" -->
+![](images/vue-create.png)<!-- .element: class="w-80" -->
 
 <!-- .element: class="center" -->
 
@@ -166,7 +140,7 @@ $ vue create moncv
 ### Step 2: Review the generated app
 
 ```sh
-$ cd moncv
+$ cd labo-vue
 $ code .
 ```
 
@@ -174,6 +148,7 @@ Install dependencies
 
 ```sh
 $ npm install
+$ npm run lint
 ```
 
 
@@ -183,7 +158,7 @@ $ npm install
 
 Start the development server
 ```sh
-npm run serve
+npm run dev
 ```
 
 edit a file and watch livereload in action
@@ -192,23 +167,7 @@ Stop the server `ctrl+c`
 
 
 
-### Step 4a: Cleanup and Configure
-
-1.  Delete `src/components` and `src/App.vue`
-
-2. Add/Remove dependencies
-```shell
-$ npm install bootstrap --save
-$ npm install @fortawesome/fontawesome-free --save
-```
-
-4. check package.json (before and after)
-
-<!-- .element: class="small" -->
-
-
-
-### Step 4b: Use LF also on windows
+### Step 4: Use LF also on windows
 
 Create `.gitattributes` with content:
 
@@ -266,42 +225,78 @@ Create `.gitattributes` with content:
 
 ### Step 5: Setup bootstrap
 
-Inside `src/main.js` replace all with
+Check package.json (before and after)
+
+1. Add dependencies
+
+```sh
+$ npm install --save bootstrap @popperjs/core
+$ npm install --save @fortawesome/fontawesome-free
+```
+
+
+2. Inside `src/main.js` add imports
 
 ```javascript
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("it works!");
-});
 ```
 
 
 
-### Step 6: add custom style file
-
-Create a main.css file under src
-
-Inside `src/main.js` after `boostrap.min.css`;
-
-```javascript
-import "./main.css";
-```
-
-
-
-### Step 7: try fontawesome
+### Step 6: Try fontawesome
 
 Add an icon to the `index.html`
 
 ```html
-<i class="fas fa-ice-cream display-1"></i>
+<i class="fas fa-ice-cream display-1 text-danger"></i>
 ```
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ice-cream" class="svg-inline--fa fa-ice-cream fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z"></path></svg>
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ice-cream" class="svg-inline--fa fa-ice-cream fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#dc3545" d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z"></path></svg>
 
-<!-- .element: class="w-20" -->
+<!-- .element: class="w-15" -->
+
+https://fontawesome.com/icons
+
+<!-- .element: class="credits" -->
+
+
+
+### Step 7: Cleanup
+
+- Delete `src/assets/base.css`
+- Empty  `src/assets/main.css`
+- Delete all files in `src/components`
+- Empty  `src/views/HomeView.vue`
+- Replace `src/App.vue` with:
+
+```html
+<template>
+  <div class="container">
+    <h1>Hello Bootstrap</h1>
+    <div class="row">
+      <div class="col-sm">
+        <button class="btn btn-primary">{{ message }}</button>
+      </div>
+      <div class="col-sm">
+        <i class="fas fa-ice-cream display-1 text-primary"></i>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      message: "Hello Vue!",
+    };
+  },
+};
+</script>
+
+<style></style>
+````
 
 
 
@@ -313,7 +308,7 @@ npm install bootswatch --save
 
 https://bootswatch.com/
 
-try different CSS files from bootswatch in index.html
+try different CSS files from bootswatch in main.js
 
 ```javascript
 import "bootswatch/dist/darkly/bootstrap.min.css";
@@ -322,8 +317,7 @@ import "bootswatch/dist/darkly/bootstrap.min.css";
 
 
 
-
-# Lab 1b: deploy
+# Lab 2: deploy
 
 ![](images/yeoman-ship.png)<!-- .element: class="w-30" -->
 
@@ -335,23 +329,26 @@ Create a [github.com](https://github.com) account and install [git-scm.com](http
 
 
 
-### Step 1: Git Master
+### Step 1: Git Main
 
-- Create github repository [moncv-xyz](https://classroom.github.com/a/t120H1t3)
+- Create github repository [labo-xyz](https://classroom.github.com/a/t120H1t3)
 - Commit your code to a git repository.
 - Commit & push your code to Github.
-- Change something and create a new commit.
-- Clone the project into another folder.
 
 
 
-### Step 2: Production version
+### Step 2: Production version test
 
 Create a built, mimified version of your page with your .
 ```sh
 npm run build
 ```
 *Notice that you have a dist folder with this new content.*
+
+Test production version with:
+```sh
+npm run preview
+```
 
 
 
@@ -364,9 +361,6 @@ There are two options:
 - User site: http://usernameABC.github.io by creating a special repository with the name: usernameABC.github.io
 - Projet site: http://usernameABC.github.io/repositoryYXZ by creating a special branch gh-pages inside the repositoryXYZ
 
-**Deploy and test your site!**
-
-*Try to deploy a new version with a changed CSS template.*
 
 Note:
 
@@ -376,16 +370,16 @@ A special CNAME file can be put at the root of gh-pages to use a custom domain n
 
 ## Setup Github and gh-pages via Github Actions
 
-- configure vue-cli to support /moncv-xyz/ in production
-- configure github Actions to build and deploy to gh-pages (see below)
+- configure github Actions to build and deploy to gh-pages
+- configure vute to support /labo-xyz/ in production
 - commit and push
 
 
 
 ### Github Action Config
 
-- create folder .github\workflows
-- add this file build_deploy.yml
+- create folder `.github\workflows`
+- add this file `build_deploy.yml`
 
 ```yml
 name: Build and Deploy to GH-Pages
@@ -406,7 +400,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -429,6 +423,17 @@ jobs:
 
 
 
+### Configure Vite publicPath
+Edit `vite.config.js` file to handle subfolder deployment.
+```sh
+export default defineConfig({
+  ...,
+  base: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/",
+});
+```
+
+
+
 ### Try to deploy
 
 After a successful ```npm run build``` commit all changes and push:
@@ -444,19 +449,11 @@ The site can be accessed at: https://heg-web.github.io/moncv-xyz/ when action wo
 
 
 
-### FIX path of static assets
+### You did it!
 
-Create a `vue.config.js` file to handle subfolder deployment.
-```sh
-module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/"
-};
-```
-Rebuild and deploy site to test the fix.
+Your First Single Page Web Application is deployed in Production!
 
-https://cli.vuejs.org/config/#publicpath
-
-<!-- .element: class="small" -->
+![](images/youdidit.gif)
 
 
 
@@ -612,7 +609,7 @@ https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-r
 
 
 
-# [Guide Vue.js](https://fr.vuejs.org/v2/guide/index.html)
+# [Guide Vue.js](https://vuejs.org/guide/introduction.html)
 
 
 
@@ -633,21 +630,20 @@ Javascript
 
 
 <script
-src="https://unpkg.com/vue@2">
+src="https://unpkg.com/vue@3">
 </script>
 ```
 <!-- .element: class="w-40 float-left" -->
 
 
 ```javascript
-new Vue({
-  el: '#app',
-  data() {
-    return {
-      message: 'Hello Vue.js!'
-    };
-  }
-});
+Vue.createApp({
+    data() {
+        return {
+        message: 'Hello Vue!'
+        };
+    }
+}).mount('#app');
 ```
 <!-- .element: class="w-40 float-right" -->
 
@@ -665,7 +661,7 @@ Vue.js expressions are JavaScript-like code snippets that are usually placed in 
 
 > Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.
 
-https://vuejs.org/v2/guide/syntax.html#Interpolations
+https://vuejs.org/guide/essentials/template-syntax.html
 
 <!-- .element: class="credits" -->
 
@@ -679,12 +675,11 @@ https://vuejs.org/v2/guide/syntax.html#Interpolations
 | v-model           | Create a two-way binding on a form input element or a component. |
 | v-bind            | Dynamically bind one or more attributes, or a component prop to an expression. |
 | v-if, v-else-if, v-else   | Conditionally render the element based on the truthy-ness of the expression value. |
-| v-show | Toggle’s the element’s display CSS property based on the truthy-ness of the expression value. |
 | v-for             | Render the element or template block multiple times based on the source data. |
 | v-on:click        | Attaches an event listener to the element. |
 
 
-https://vuejs.org/v2/api/#Directives
+https://vuejs.org/api/built-in-directives.html#built-in-directives
 
 <!-- .element: class="credits" -->
 
@@ -699,18 +694,17 @@ https://vuejs.org/v2/api/#Directives
   <p>Hello {{name}}</p>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       name: ''  // Important attribute must exist on data object!
     };
   }
-});
+}).mount('#app');
 ```
 
 
@@ -727,21 +721,20 @@ new Vue({
   <pre>{{name}}</pre>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       name: ''
     };
   },
-});
+}).mount('#app');
 ```
 
-https://vuejs.org/v2/guide/forms.html#trim
+https://vuejs.org/guide/essentials/forms.html#modifiers
 
 <!-- .element: class="credits" -->
 
@@ -760,22 +753,21 @@ https://vuejs.org/v2/guide/forms.html#trim
   </p>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       num1: 4,
       num2: 2
     };
   },
-});
+}).mount('#app');
 ```
 
-https://vuejs.org/v2/guide/forms.html#trim
+https://vuejs.org/guide/essentials/forms.html#number
 
 <!-- .element: class="credits" -->
 
@@ -803,18 +795,17 @@ Toggle’s the element’s display CSS property based on the truthy-ness of the 
   <div v-show="type === 'B'"> B </div>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       type: 'A'
     };
   },
-});
+}).mount('#app');
 ```
 
 
@@ -865,55 +856,17 @@ new Vue({
   </ul>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       names: ['Fred','Alice', 'Bob']
     };
   },
-});
-```
-
-
-
-### GOTCHAS arrays
-
-Arrays mutation are only tracked on the following methods
-
-```javascript
-array.push()
-array.pop()
-array.shift()
-array.unshift()
-array.splice()
-array.sort()
-array.reverse()
-```
-
-> Setting [index] or .length will not work!
-
-Replace entire array with
-```javascript
-array.filter()
-array.concat()
-array.slice()
-```
-
-
-
-### GOTCHAS new attributes
-
-There are also methods on Vue and the vue instance to set new observed attributes onto an array or an object.
-
-```javascript
-Vue.set( example1.items, indexOfItem, newValue )
-
-vm.$set( target, key, value )
+}).mount('#app');
 ```
 
 
@@ -933,12 +886,11 @@ vm.$set( target, key, value )
   <button v-on:click="addOne">Click Me!</button> {{count}}
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       count: 0
@@ -952,7 +904,7 @@ new Vue({
       this.count += nb;
     }
   }
-});
+}).mount('#app');
 ```
 
 
@@ -967,10 +919,13 @@ For common event manipulation there are helpers
 |----------------------------|------------------------------------------------------|
 | .stop                      | call event.stopPropagation().                        |
 | .prevent                   | call event.preventDefault().                         |
-| .{keyCode &#124; keyAlias} | only trigger handler on certain keys.                |
+| .{keyAlias}                | only trigger handler on certain keys.                |
 | .right                     | only trigger handler for right button mouse events.  |
 | .left                      | only trigger handler for left button mouse events.   |
 | .middle                    | only trigger handler for middle button mouse events. |
+
+https://vuejs.org/guide/essentials/event-handling.html#event-modifiers
+<!-- .element: class="credits" -->
 
 
 
@@ -985,12 +940,11 @@ For common event manipulation there are helpers
   <input @keyup.enter="onEnter">
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       count: 0
@@ -1003,7 +957,7 @@ new Vue({
     onEnter() {window.alert('hello');},
     onSubmit() {}
   }
-});
+}).mount('#app');
 ```
 
 
@@ -1011,13 +965,8 @@ new Vue({
 
 ## Setup environement to play with vue.js:
 
-- create a new vue project
-- install dependencies
 - install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-- install [vscode vetur extension](vscode:extension/octref.vetur)
-
-
-
+- install [vscode Vue Volar extension](vscode:extension/Vue.volar)
 - change vscode settings eslint.validate
 ```
 "eslint.validate": [
@@ -1025,64 +974,6 @@ new Vue({
         "javascriptreact",
         "vue"
     ]
-```
-
-
-
-
-## Setup Github and gh-pages via Github Actions
-
-- configure vue-cli to support /labo-xyz/ in production
-- create project on github https://classroom.github.com/a/HQfmAarx
-- add remote to local git
-- configure github Actions to build and deploy to gh-pages (see below)
-- commit and push
-
-
-
-### Github Action Config
-
-- create folder .github\workflows
-- add this file build_deploy.yml
-
-```yml
-name: Build and Deploy to GH-Pages
-
-on:
-  push:
-    branches:
-      - master
-      - main
-
-jobs:
-  build_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      #- run: npm test
-      - run: npm run build
-
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
 ```
 
 
@@ -1168,12 +1059,11 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
   <button @click="count+=1">render</button>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() { return { count: 0 };
   },
   computed: {
@@ -1182,7 +1072,7 @@ new Vue({
   methods: {
     date2() { return new Date(); }
   }
-});
+}).mount('#app');
 ```
 
 
@@ -1209,6 +1099,8 @@ computed: {
 }
 // ...
 ```
+
+
 
 
 ### Vue Concepts Summary
@@ -1297,11 +1189,12 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
   <my-tag></my-tag>
 </div>
 
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
-Vue.component('my-tag', {
+app = Vue.createApp({});
+app.component('my-tag', {
   template: `<div>{{ text }}<div>`,
   data() {
     return {
@@ -1309,10 +1202,7 @@ Vue.component('my-tag', {
     }
   }
 });
-
-new Vue({
-  el: '#app'
-});
+app.mount('#app');
 ```
 
 > Note that Vue does not enforce the W3C rules for custom tag names (all-lowercase, must contain a hyphen) though following this convention is considered good practice.
@@ -1336,7 +1226,7 @@ https://speakerdeck.com/bhawkes/introduction-to-vue-js
 Global
 
 ```javascript
-Vue.component('my-component', {
+app.component('my-component', {
   // options
 })
 ```
@@ -1348,14 +1238,14 @@ import MyTag from './components/MyTag';
 const Child = {
   template: '<div>A custom component!</div>'
 }
-new Vue({
+Vue.createApp({
   // ...
   components: {
     // <my-component> will only be available in parent's template
     'my-component': Child,
     'my-tag': MyTag // shorthand MyTag possible
   }
-})
+}).mount('#app');
 ```
 
 
@@ -1400,7 +1290,8 @@ Warning: changing an attribute of a bound object mutates it's state outside the 
 
 Define
 ```javascript
-Vue.component('myCheckbox', {
+app.component('myCheckbox', {
+  emits: ['hello'],
   methodes: {
     change() {
       this.$emit('hello', 'world');
@@ -1424,14 +1315,15 @@ Use
 <div id="app">
   <my-countdown v-bind:start="count" v-on:zero="alarm()"></my-countdown>
 </div>
-<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue@3"></script>
 ```
 
 ```javascript
 // Vue component
-const MyCountdown = {
+MyCountdown = {
   template: `<div v-on:click="countDown()">{{ count }}</div>`,
   props: ['start'],
+  emits: ['zero'],
   data() {
     return {
       count: this.start
@@ -1448,8 +1340,7 @@ const MyCountdown = {
   }
 };
 // Main Vue instance
-new Vue({
-  el: '#app',
+Vue.createApp({
   data() {
     return {
       count: 10
@@ -1463,7 +1354,7 @@ new Vue({
   components: { // local component reference
     'my-countdown': MyCountdown
   }
-});
+}).mount('#app');
 ```
 
 
@@ -1473,7 +1364,7 @@ new Vue({
 
 Define
 ```javascript
-Vue.component('myCheckbox', {
+app.component('myCheckbox', {
   props: {
     isOk: {
       type: Boolean,
@@ -1549,45 +1440,12 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 
 
-### Content Distribution Inside a Component with Slots
-
-```html
-<!-- app-layout component -->
-<div class="container">
-  <header>
-    <slot name="header"></slot>
-  </header>
-  <main>
-    <slot></slot>
-  </main>
-  <footer>
-    <slot name="footer"></slot>
-  </footer>
-</div>
-```
-
-```html
-<app-layout>
-  <template v-slot:header>
-    <h1>Here might be a page title</h1>
-  </template>
-  <p>A paragraph for the main content.</p>
-  <p>And another one.</p>
-  <template v-slot:footer>
-    <p>Here's some contact info</p>
-  </template>
-</app-layout>
-```
-
-
-
-
 ### Transitions
 
 ```html
-<transition name="fade">
+<Transition name="fade">
   <p v-if="show">hello</p>
-</transition>
+</Transition>
 
 <transition-group name="flip-list" tag="ul">
   <!-- multiple elements / move animations -->
@@ -1599,16 +1457,24 @@ this.$root.$off('i-got-clicked', clickHandler);
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
 }
-.fade-enter, .fade-leave-to {
+.fade-enter-from, .fade-leave-to {
   opacity: 0
 }
-.flip-list-move {
+.flip-list-move,
+.flip-list-enter-active,
+.flip-list-leave-active
+{
   transition: transform 1s;
 }
 
 ```
-https://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components
-https://vuejs.org/v2/guide/transitions.html#List-Transitions
+https://vuejs.org/guide/built-ins/transition.html#css-based-transitions
+
+<!-- .element: class="smaller" -->
+
+https://vuejs.org/guide/built-ins/transition-group.html#move-transitions
+
+<!-- .element: class="smaller" -->
 
 
 
@@ -1620,7 +1486,7 @@ Transformer (Refactor) l'application en composant selon:
 
 <!-- .element: class="center box" -->
 
-- Créer un filtre global chf dans main.js
+- Créer une fonction reutilisable toChf() qui retourne un nombre formaté en chf.
 - Ajouter, transformer le code, pour que l'applicaiton fonctionne encore de la même façon.
 
 <!-- .element: class="small" -->
@@ -1707,13 +1573,13 @@ https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 ### Lifecycle Hooks
 
-https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram
+https://vuejs.org/guide/essentials/lifecycle.html
 
-created, mounted, beforeDestroy, ...
+created, mounted, unmounted, ...
 
 ![](images/lifecycle.png)
 
-<!-- .element: class="w-30 right top" -->
+<!-- .element: class="w-40 right top" -->
 
 
 
@@ -1737,7 +1603,7 @@ This can be achieved with a router, routes and components.
 
 
 ```javascript
-const router = new VueRouter({
+const router = createRouter({
   routes: [
     // dynamic segments start with a colon
     { path: '/user/:id', name: 'user', component: User }
@@ -1812,9 +1678,7 @@ beforeRouteUpdate (to, from, next) {
 
 ### Exercice Vue.js: router
 
-Créer un nouveau projet vue avec router sans history mode.
-
-```Use history mode for router? n```
+Remplacer `createWebHistory` avec `createWebHashHistory` dans `src/router/index.js`
 
 Ajouter deux pages supplémentaires pour créer ceci:
 
@@ -1854,12 +1718,11 @@ Ajouter deux pages supplémentaires pour créer ceci:
 ```
 
 ```javascript
-new Vue({
-  el: '#app',
+Vue.createApp({
   mounted() {
     this.$refs.someID.innerText = 'DOM Direct Manipulation is BAD!';
   }
-});
+}).mount('#app');
 ```
 
 
@@ -1872,33 +1735,36 @@ new Vue({
 
 
 ### Vue.js more
-
-- Transitioning State
+- Composition API
 - Mixins
 - Custom Directives
+- Slots
 - Vue.nextTick
 - Plugins
 - Server-Side Rendering
-- Webpack Code Splitting
+- Code Splitting
 - Route lazy loading
-- State Management: VueX
-
+- State Management: Pina
 
 
 
 ### Resources
 
-- https://vuejs.org/v2/guide/
-- https://vuejs.org/v2/api/
-- https://www.grafikart.fr/formations/vuejs
-- https://speakerdeck.com/bhawkes/introduction-to-vue-js
+- https://vuejs.org/guide/introduction.html
+- https://vuejs.org/api/
+- https://www.grafikart.fr/formations/vuejs (attention Vue.js 2)
+
+
+
+
+# JavaScript Asynchronous Programming
 
 
 
 
 ## Asynchronous programming techniques
 
-We have already seen that JavaScript relies on asynchronous
+JavaScript relies on asynchronous
 programming:
 
 * The JS engine is single-threaded. For this reason, IO operations have to be non-blocking.
@@ -2354,10 +2220,10 @@ axios.get('https://api.thecatapi.com/v1/images/search', {
 ### Load Data in Vue.js
 
 ```javascript
-import axios from 'axios';
+import { createApp } from "vue";
+import axios from "axios";
 
-new Vue({
-  el: '#app',
+createApp({
   data() {
     return {
       dataLoaded: false,
@@ -2365,18 +2231,20 @@ new Vue({
     };
   },
   methods: {
-    loadData: function() {
-      axios.get('https://api.thecatapi.com/v1/images/search')
-        .then(response => {
-        this.apiReply = response.data;
-        this.dataLoaded = true;
-      });
+    loadData: function () {
+      axios
+        .get("https://api.thecatapi.com/v1/images/search")
+        .then((response) => {
+          this.apiReply = response.data;
+          this.dataLoaded = true;
+        });
     }
   },
-  created() { // or mounted
+  created() {
+    // or mounted
     this.loadData();
   }
-});
+}).mount("#app");
 ```
 [![Edit Vue Axios](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/demo-vue-axios-piguss)
 
@@ -2481,37 +2349,9 @@ https://developers.google.com/web/fundamentals/getting-started/primers/async-fun
 
 ### Using Material instead of bootstrap
 
-https://vuetifyjs.com/
-
-```sh
-vue add vuetify
-```
-or
-
-```sh
-$ npm install vuetify --save
-```
-
-```html
-<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-```
-
-```javascript
-import Vue from 'vue';
-import Vuetify from 'vuetify';
-import('./node_modules/vuetify/dist/vuetify.min.css');
-
-Vue.use(Vuetify)
-```
+https://quasar.dev/start/vite-plugin
 
 Read the docs, copy examples, ...
-
-
-
-### Material Design Ressources
-
-- https://www.materialpalette.com/green/blue
-- https://materialdesignicons.com/
 
 
 
@@ -2547,7 +2387,7 @@ Available commands: login, init, serve, deploy
 
 Integration with Vue.js
 ```sh
-$ npm install firebase vuefire --save
+$ npm install firebase --save
 ```
 https://github.com/vuejs/vuefire
 
@@ -2601,25 +2441,40 @@ export default firebase.initializeApp(config);
 
 ```javascript
 import firebase from "@/plugins/firebase";
+const $firebaseRefs = {
+  messages: firebase.database().ref("/demo/messages"),
+};
 export default {
   data() {
     return {
       newMsg: "",
-      messages: []
+      messages: [],
     };
   },
-  firebase: {
-    messages: firebase.database().ref("/demo/messages")
+  mounted() {
+    $firebaseRefs.messages.on("value", this.updateMessages);
+  },
+  unmounted() {
+    $firebaseRefs.messages.off("value", this.updateMessages);
   },
   methods: {
+    updateMessages(snapshot) {
+      const items = snapshot.val();
+      this.messages = Object.keys(items).map((key) => {
+        return {
+          ".key": key,
+          ...items[key],
+        };
+      });
+    },
     send() {
-      this.$firebaseRefs.messages.push({ txt: this.newMsg });
+      $firebaseRefs.messages.push({ txt: this.newMsg });
       this.newMsg = "";
     },
     remove(p) {
-      this.$firebaseRefs.messages.child(p[".key"]).remove();
-    }
-  }
+      $firebaseRefs.messages.child(p[".key"]).remove();
+    },
+  },
 };
 ```
 
