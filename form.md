@@ -746,7 +746,7 @@ Dans certains cas, on ne peut pas mettre le contrôle `<input>` dans l'élément
 
 <!-- .slide: data-background-image="images/background_code.webp" -->
 
-## [HTML Formulaire: Ski Club](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Form_SkiClub)
+## [HTML Formulaire: Ski Club Bootstrap](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Form_SkiClub_Bootstrap)
 <!-- .element: class="text-white" -->
 
 
