@@ -1068,7 +1068,12 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 <html>
 <head>
 	<meta charset="utf-8">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	 <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 	<title>Jumbotron Template for Bootstrap</title>
 </head>
 <body>
@@ -1134,7 +1139,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 ```
 <!-- .element: class="hide" -->
 
-[https://getbootstrap.com/docs/5.1/layout/grid/](https://getbootstrap.com/docs/5.1/layout/grid/)
+[https://getbootstrap.com/docs/5.2/layout/grid/](https://getbootstrap.com/docs/5.2/layout/grid/)
 
 <!-- .element: class="credits" -->
 
@@ -1150,16 +1155,20 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.88.1">
-	<title>Carousel Template · Bootstrap v5.1</title>
+	<title>Carousel Template · Bootstrap v5.2</title>
 
-	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
 
 	<!-- Bootstrap core CSS -->
-	<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	 <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 
 	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="https://getbootstrap.com//docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+	<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 	<link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 	<link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 	<link rel="manifest" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/manifest.json">
@@ -1184,7 +1193,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 	</style>
 
 	<!-- Custom styles for this template -->
-	<link href="https://getbootstrap.com/docs/5.1/examples/carousel/carousel.css" rel="stylesheet">
+	<link href="https://getbootstrap.com/docs/5.2/examples/carousel/carousel.css" rel="stylesheet">
 </head>
 
 <body>
