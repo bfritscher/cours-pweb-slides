@@ -798,6 +798,18 @@ function onload() {
 
 
 
+# Exercices
+
+<!-- .element: class="text-white" -->
+
+<!-- .slide: data-background-image="images/background_code.webp" -->
+
+## [DOM JS Donations](https://github.com/bfritscher/cours-html-exercices/tree/master/DOM_JS_Donations)
+<!-- .element: class="text-white" -->
+
+
+
+
 ### References
 
 * https://developer.mozilla.org/fr/docs/Web/JavaScript/Une_r%C3%A9introduction_%C3%A0_JavaScript

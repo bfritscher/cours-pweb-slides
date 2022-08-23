@@ -831,15 +831,62 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 <!-- .element: class="center" -->
 
 https://philipwalton.github.io/solved-by-flexbox/
-<!-- .element: class="small" -->
+<!-- .element: class="smaller" -->
+https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+<!-- .element: class="smaller" -->
+
 
 Exercise: [Flexbox Froggy](https://flexboxfroggy.com/)
 
 http://blog.teamtreehouse.com/responsive-design-of-the-future-with-flexbox
 <!-- .element: class="credits" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Flexbox
-<!-- .element: class="credits" -->
+
+
+### CSS: Flexbox Example
+
+```html
+<div class="row">
+  <div class="box">a</div>
+  <div class="box">b</div>
+  <div class="box">c</div>
+  <div class="box">d</div>
+</div>
+```
+<!-- .element: class="nopdf" -->
+
+```css
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    border: 2px solid #85FF1B;
+}
+
+.box{
+  border: 3px solid #FF851B;
+  padding: 8px;
+  margin: 2px;
+}
+```
+<!-- .element: class="nopdf" -->
+
+
+
+<iframe width="100%" height="100%" src="https://the-echoplex.net/flexyboxes/?fixed-height=on&display=flex&flex-direction=row&flex-wrap=wrap&justify-content=center&align-items=center&align-content=stretch&order%5B%5D=4&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=1&flex-grow%5B%5D=2&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=2&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=3&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto"></iframe>
+
+
+
+
+# Exercices
+
+<!-- .element: class="text-white" -->
+
+<!-- .slide: data-background-image="images/background_code.webp" -->
+
+## [CSS Flexbox Biscuits Lite](https://github.com/bfritscher/cours-html-exercices/tree/master/CSS_Flexbox_Biscuits_lite)
+<!-- .element: class="text-white" -->
 
 
 
@@ -1385,7 +1432,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 
 <!-- .slide: data-background-image="images/background_code.webp" -->
 
-## [CSS Avancé Biscuits](https://github.com/bfritscher/cours-html-exercices/tree/master/CSS_Flexbox_Biscuits)
+## [CSS Bootstrap](https://github.com/bfritscher/cours-html-exercices/tree/master/CSS_Bootstrap)
 <!-- .element: class="text-white" -->
 
 
