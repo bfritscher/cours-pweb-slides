@@ -444,15 +444,10 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 
 ### Assignment AlgoJS
 
-1. Generate a github repository for you by  [clicking here](https://classroom.github.com/a/_3sCGKng)
+1. Generate a github repository for you by  [clicking here](https://classroom.github.com/a/Ip3Gef6Z)
 2. Clone the project in VS Code
 3. `npm install` dependencies
-4. Install Mocha Sidebar [![Version](https://vsmarketplacebadge.apphb.com/version/maty.vscode-mocha-sidebar.svg)](https://marketplace.visualstudio.com/items?itemName=maty.vscode-mocha-sidebar) for VSCode
-```
-    "mocha.coverage": { // File > Preferences > Settings
-        "enable": false
-    }
-```
+4. Install [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) for VSCode
 5. Write code to pass the tests
 6. Commit and push your changes
 7. Check your status on https://pweb.bf0.ch/
