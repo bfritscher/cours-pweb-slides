@@ -710,11 +710,11 @@ const element = document.body;
 // find element(s)
 const element = document.getElementById("some_id");
 
-// returns an Element
+// returns an Element from a CSS Selector
 const parentElement = document.querySelector("ul");
 
-// returns an iterable of Elements
-const elements = document.querySelectorAll("li");
+// returns an iterable of Elements from a CSS Selector
+const elements = document.querySelectorAll("ul.someClass > li");
 const element = elements[0];
 
 // create a new element
@@ -726,7 +726,10 @@ parentElement.append(element);
 // Page ready
 document.addEventListener('DOMContentLoaded', function() {});
 ```
-
+  
+https://developer.mozilla.org/en-US/docs/Web/API/Element
+<!-- .element class="small" -->
+ 
 https://github.com/oneuijs/You-Dont-Need-jQuery
 <!-- .element class="small" -->
 
