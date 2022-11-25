@@ -107,7 +107,7 @@ Is a build tool that aims to provide a faster and leaner development experience 
 
 ## Lab 1: Vue.js
 
-Setup a local Vue.js project with deployment to GitHub
+Setup a local Vue.js project
 
 ![](images/yeoman-packages.png)<!-- .element: class="w-30" -->
 
@@ -122,13 +122,32 @@ Download and install [Git](https://git-scm.com/download/win) to get `git`.
 Download and install [Visual Studio Code](https://code.visualstudio.com/) to get `code`.
 
 
+Check that it works from the shell:
+
+```sh
+$ git --version
+git version X.Y.Z
+
+$ node --version
+vX.Y.Z
+
+$ code --version
+X.Y.Z
+...
+x64
+```
+
+
 
 ### Step 1: Create a new project
+
+First change to a parent folder in which the project folder will be created.
+<!-- .element: class="red smaller" -->
 
 Use vue/vite to create a new project.
 
 ```sh
-$ npm init vue@latest
+C:\temp> npm init vue@latest
 ```
 
 ![](images/vue-create.png)<!-- .element: class="w-80" -->
@@ -137,23 +156,36 @@ $ npm init vue@latest
 
 
 
-### Step 2: Review the generated app
+### Step 2: Install Extensions
 
+Change into the directory and launch vscode
 ```sh
 $ cd labo-vue
 $ code .
 ```
 
-Install dependencies
+- install [vscode Vue Volar extension](vscode:extension/Vue.volar)
+- install [vscode Prettier extension](vscode:extension/esbenp.prettier-vscode)
+- install [vscode eslint extension](vscode:extension/dbaeumer.vscode-eslint)
+
+- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+
+
+
+### Step 3: Install dependencies
+
+Must be done inside the project's root folder!
+<!-- .element: class="red smaller" -->
 
 ```sh
 $ npm install
-$ npm run lint
 ```
 
+This will read `package.json` and update `node_modules` folder.
 
 
-### Step 3: Preview your app in the browser
+
+### Step 4: Preview your app in the browser
 
 
 Start the development server
@@ -161,114 +193,21 @@ Start the development server
 npm run dev
 ```
 
-edit a file and watch livereload in action
+edit a file and watch livereload in action.
 
-Stop the server `ctrl+c`
+For example add `<h1>Test vue!</h1>` to `<body>` in `./index.html`.
+<!-- .element: class="small" -->
 
-
-
-### Step 4: Use LF also on windows
-
-Create `.gitattributes` with content:
-
-```txt
-# Force all line endings to be \n
-* text eol=lf
-
-############################################################
-# git can corrupt binary files if they're not set to binary.
-############################################################
-
-# Apple office documents are actually folders, so treat them as binary.
-*.numbers binary
-*.pages binary
-*.keynote binary
-
-# Image files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.webp binary
-*.ico binary
-
-# Movie and audio files
-*.mov binary
-*.mp4 binary
-*.mp3 binary
-*.flv binary
-*.ogg binary
-
-# Compression formats
-*.gz binary
-*.bz2 binary
-*.7z binary
-*.zip binary
-
-# Web fonts
-*.ttf binary
-*.eot binary
-*.woff binary
-*.otf binary
-
-# Other
-*.fla binary
-*.swf binary
-*.pdf binary
-
-############################################################
-# End binary settings
-############################################################
-```
+Stop the server with `ctrl+c`
+<!-- .element: class="red" -->
 
 
 
-### Step 5: Setup bootstrap
-
-Check package.json (before and after)
-
-1. Add dependencies
-
-```sh
-$ npm install --save bootstrap @popperjs/core
-$ npm install --save @fortawesome/fontawesome-free
-```
-
-
-2. Inside `src/main.js` add imports
-
-```javascript
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-```
-
-
-
-### Step 6: Try fontawesome
-
-Add an icon to the `index.html`
-
-```html
-<i class="fas fa-ice-cream display-1 text-danger"></i>
-```
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ice-cream" class="svg-inline--fa fa-ice-cream fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#dc3545" d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z"></path></svg>
-
-<!-- .element: class="w-15" -->
-
-https://fontawesome.com/icons
-
-<!-- .element: class="credits" -->
-
-
-
-### Step 7: Cleanup
+### Step 5: Cleanup
 
 - Delete `src/assets/base.css`
 - Empty  `src/assets/main.css`
-- Delete all files in `src/components`
-- Empty  `src/views/HomeView.vue`
-- Replace `src/App.vue` with:
+- Replace `src/App.vue` with this code:
 
 ```html
 <template>
@@ -300,7 +239,49 @@ export default {
 
 
 
-### Step 8: Use npm to install other packages
+### Step 6: Setup bootstrap and fontawesome
+
+Check package.json (before and after)
+
+1. Add dependencies
+
+```sh
+$ npm install --save bootstrap @popperjs/core
+$ npm install --save @fortawesome/fontawesome-free
+```
+
+
+2. Inside `src/main.js` add imports
+
+```javascript
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+```
+
+
+
+### Step 6: Try more fontawesome
+
+Check that the icon works:
+
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ice-cream" class="svg-inline--fa fa-ice-cream fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#dc3545" d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z"></path></svg>
+
+<!-- .element: class="w-15" -->
+
+Add another icon to the `App.vue template inside the button`
+
+https://fontawesome.com/icons
+
+```html
+<i class="fa-solid fa-cake-candles"></i>
+```
+
+
+
+### Step 7: Use npm to install other packages
+
+Lets try another bootstrap look.
 
 ```sh
 npm install bootswatch --save
@@ -308,7 +289,7 @@ npm install bootswatch --save
 
 https://bootswatch.com/
 
-try different CSS files from bootswatch in main.js
+try different CSS files from bootswatch in `main.js`
 
 ```javascript
 import "bootswatch/dist/darkly/bootstrap.min.css";
@@ -317,143 +298,27 @@ import "bootswatch/dist/darkly/bootstrap.min.css";
 
 
 
-# Lab 2: deploy
+### Test linting
 
-![](images/yeoman-ship.png)<!-- .element: class="w-30" -->
+We installed two linter:
 
+- Prettier for code formatting
+- ESLint for code quality
 
+Run the command and check how the files are changed.
 
-### Step 0: Install
-
-Create a [github.com](https://github.com) account and install [git-scm.com](https://git-scm.com/download/win) to have a version of `git`.
-
-
-
-### Step 1: Git Main
-
-- Create github repository [labo-xyz](https://classroom.github.com/a/t120H1t3)
-- Commit your code to a git repository.
-- Commit & push your code to Github.
-
-
-
-### Step 2: Production version test
-
-Create a built, mimified version of your page with your .
 ```sh
-npm run build
-```
-*Notice that you have a dist folder with this new content.*
-
-Test production version with:
-```sh
-npm run preview
+$ npm run lint
 ```
 
+Copy this line into main.js and see what happens.
 
-
-### Step 3: Deploy static site on Github
-
-Github offers to serve static web pages https://pages.github.com/
-
-There are two options:
-
-- User site: http://usernameABC.github.io by creating a special repository with the name: usernameABC.github.io
-- Projet site: http://usernameABC.github.io/repositoryYXZ by creating a special branch gh-pages inside the repositoryXYZ
-
-
-Note:
-
-A special CNAME file can be put at the root of gh-pages to use a custom domain name.
-
-
-
-## Setup Github and gh-pages via Github Actions
-
-- configure github Actions to build and deploy to gh-pages
-- configure vute to support /labo-xyz/ in production
-- commit and push
-
-
-
-### Github Action Config
-
-- create folder `.github\workflows`
-- add this file `build_deploy.yml`
-
-```yml
-name: Build and Deploy to GH-Pages
-
-on:
-  push:
-    branches:
-      - master
-      - main
-
-jobs:
-  build_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      #- run: npm test
-      - run: npm run build
-
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
+```js
+let myvar = 'Hello World'
 ```
 
-
-
-### Configure Vite publicPath
-Edit `vite.config.js` file to handle subfolder deployment.
-```sh
-export default defineConfig({
-  ...,
-  base: process.env.NODE_ENV === "production" ? "/moncv-test/" : "/",
-});
-```
-
-
-
-### Try to deploy
-
-After a successful ```npm run build``` commit all changes and push:
-```sh
-git add . --all
-git commit
-git push
-```
-
-The site can be accessed at: https://heg-web.github.io/moncv-xyz/ when action workflow is finished.
-
-<!-- .element: class="small" -->
-
-
-
-### You did it!
-
-Your First Single Page Web Application is deployed in Production!
-
-![](images/youdidit.gif)
+Check the PROBLEMS tab of vscode
+(right-click to fix problem).
 
 
 
@@ -587,13 +452,9 @@ https://www.codeinwp.com/blog/angular-vs-vue-vs-react/
 <!-- .element: class="credits"-->
 
 
-
 https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/
 
 <!-- .element: class="credits"-->
-
-![](images/inforgrafic-react-angular-vue.webp)
-
 
 
 
@@ -963,20 +824,6 @@ Vue.createApp({
 
 
 
-## Setup environement to play with vue.js:
-
-- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-- install [vscode Vue Volar extension](vscode:extension/Vue.volar)
-- change vscode settings eslint.validate
-```
-"eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "vue"
-    ]
-```
-
-
 
 
 ### Exercice Vue.js: model, if, for
@@ -991,6 +838,205 @@ Editer App.vue pour créer la page suivante :
 - On peut effacer un élément de la liste avec le bouton « X »
 
 <!-- .element: class="small" -->
+
+
+
+
+# Lab 2: deploy to github pages
+
+![](images/yeoman-ship.png)<!-- .element: class="w-30" -->
+
+
+
+### Step 0: Install
+
+Create a [github.com](https://github.com) account and install [git-scm.com](https://git-scm.com/download/win) to have a version of `git`.
+
+
+
+### Step 0: Use LF also on windows
+
+Create `.gitattributes` with content:
+
+```txt
+# Force all line endings to be \n
+* text eol=lf
+
+############################################################
+# git can corrupt binary files if they're not set to binary.
+############################################################
+
+# Apple office documents are actually folders, so treat them as binary.
+*.numbers binary
+*.pages binary
+*.keynote binary
+
+# Image files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+
+# Movie and audio files
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.flv binary
+*.ogg binary
+
+# Compression formats
+*.gz binary
+*.bz2 binary
+*.7z binary
+*.zip binary
+
+# Web fonts
+*.ttf binary
+*.eot binary
+*.woff binary
+*.otf binary
+
+# Other
+*.fla binary
+*.swf binary
+*.pdf binary
+
+############################################################
+# End binary settings
+############################################################
+```
+
+
+
+### Step 1: Git Main
+
+- Create github repository [labo-xyz](https://classroom.github.com/a/KHAPN3aT)
+- Init a git repository
+- Add and Commit your code.
+- Add remote
+- Push your code to Github.
+
+
+
+### Step 2: Production version test
+
+Create a built, mimified version of your page with your .
+```sh
+npm run build
+```
+*Notice that you have a dist folder with this new content.*
+
+Test production version with:
+```sh
+npm run preview
+```
+
+
+
+### Step 3: Deploy static site on Github
+
+Github offers to serve static web pages https://pages.github.com/
+
+There are two options:
+
+- User site: http://usernameABC.github.io by creating a special repository with the name: usernameABC.github.io
+- Projet site: http://usernameABC.github.io/repositoryYXZ by creating a special branch gh-pages inside the repositoryXYZ
+
+
+Note:
+
+A special CNAME file can be put at the root of gh-pages to use a custom domain name.
+
+
+
+## Setup Github and gh-pages via Github Actions
+
+- configure github Actions to build and deploy to gh-pages
+- configure vue to support /labo-xyz/ in production
+- commit and push
+
+
+
+### Github Action Config
+
+- create folder `.github\workflows`
+- add this file `build_deploy.yml`
+
+```yml
+name: Build and Deploy to GH-Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      #- run: npm test
+      - run: npm run build
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+
+```
+
+
+
+### Configure Vite publicPath
+Edit `vite.config.js` file to handle subfolder deployment.
+```sh
+export default defineConfig({
+  ...,
+  base: process.env.NODE_ENV === "production" ? "/labo-test/" : "/",
+});
+```
+
+
+
+### Try to deploy
+
+After a successful ```npm run build``` commit all changes and push:
+```sh
+git add . --all
+git commit
+git push
+```
+
+The site can be accessed at: https://heg-web.github.io/labo-test/ when action workflow is finished.
+
+<!-- .element: class="small" -->
+
+
+
+### You did it!
+
+Your First Single Page Web Application is deployed in Production!
+
+![](images/youdidit.gif)
 
 
 
