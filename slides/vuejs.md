@@ -1489,15 +1489,19 @@ this.$root.$off('i-got-clicked', clickHandler);
 ### Transitions
 
 ```html
-<Transition name="fade">
+<transition name="fade">
   <p v-if="show">hello</p>
-</Transition>
+</transition>
 
 <transition-group name="flip-list" tag="ul">
   <!-- multiple elements / move animations -->
 </transition-group>
 
 ```
+
+
+
+
 
 ```css
 .fade-enter-active, .fade-leave-active {
@@ -1533,7 +1537,7 @@ Transformer (Refactor) l'application en composant selon:
 <!-- .element: class="center box" -->
 
 - Créer une fonction reutilisable toChf() qui retourne un nombre formaté en chf.
-- Ajouter, transformer le code, pour que l'applicaiton fonctionne encore de la même façon.
+- Ajouter, transformer le code, pour que l'application fonctionne encore de la même façon.
 
 <!-- .element: class="small" -->
 
