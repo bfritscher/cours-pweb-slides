@@ -1499,24 +1499,19 @@ this.$root.$off('i-got-clicked', clickHandler);
 
 ```
 
-
-
-
-
 ```css
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+  transition: opacity 1s
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0
 }
-.flip-list-move,
-.flip-list-enter-active,
-.flip-list-leave-active
-{
+.flip-list-move, .flip-list-enter-active, .flip-list-leave-active {
   transition: transform 1s;
 }
-
+.flip-list-enter-from, .flip-list-leave-to {
+  transform: scale(0);
+}
 ```
 https://vuejs.org/guide/built-ins/transition.html#css-based-transitions
 
