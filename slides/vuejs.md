@@ -1664,12 +1664,12 @@ const router = createRouter({
 <div>{{ $route.params.id }}</div>
 
 <!-- create links by lookup of the route -->
-<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+<router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link>
 ```
 
 ```javascript
 // changing route in code.
-this.$router.push({ name: 'user', params: { userId: 123 }})
+this.$router.push({ name: 'user', params: { id: 123 }})
 ```
 
 
