@@ -2434,7 +2434,6 @@ Integration with Vue.js
 ```sh
 $ npm install firebase --save
 ```
-https://github.com/vuejs/vuefire
 
 To use login UI for firebase authentification
 
@@ -2449,7 +2448,6 @@ https://github.com/firebase/FirebaseUI-Web
 
 - https://firebase.google.com/
 - https://firebase.google.com/docs/web/setup#add-sdks-initialize
-- https://vuefire.vuejs.org/vuefire/getting-started.html
 - https://firebase.google.com/docs/auth/web/github-auth
 
 <!-- .element class="smaller" -->
@@ -2463,8 +2461,6 @@ import "firebase/compat/auth";
 import "firebase/compat/database";
 // import "firebase/compat/storage";
 // import "firebase/compat/firestore";
-import { rtdbPlugin } from "vuefire";
-Vue.use(rtdbPlugin);
 
 // Initialize Firebase
 // Copy from google firebase console (Authentication>Web Setup)
