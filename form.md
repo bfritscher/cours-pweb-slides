@@ -33,7 +33,7 @@ exemple simple:
 ### HTML `<form>`
 
 ```html
-<form action="https://ptsv2.com./t/heg/post" method="post">
+<form action="https://httpbin.org/post" method="post">
     <label>Ville: <input name="city_name"/></label> <br/>
     <label>Pays: <input name="country_name"/></label> <br/>
     <input type="submit" value="Envoyer"/>
@@ -400,7 +400,7 @@ chacun portant un nom différent.
 <!-- .element: class="small" -->
 
 ```html
-<form action="https://ptsv2.com./t/heg/post">
+<form action="https://httpbin.org/post">
   <input type="submit" name="save1" value="Sauver"/> <br />
   Envoyer le formulaire <input type="image"  name="save2"
     src="images/save-solid.svg" alt="Sauver" />
@@ -424,7 +424,7 @@ bouton qui provoque l'envoi des données du formulaire
 | type	   | submit, reset ou button
 
 ```html
-<form action="https://ptsv2.com./t/heg/post">
+<form action="https://httpbin.org/post">
   <label>Nom: <input type="text" name="nom"/><br/>
 
   <button type="button">ne fait rien</button><br/>
@@ -480,7 +480,7 @@ Exemple: Achat sur un Web Shop, le numéro de la commande n'est pas saisi par l'
 ```html
 <h3>Devenz membre de notre association:</h3>
 <form method="get"
-      action="https://ptsv2.com./t/heg/post">
+      action="https://httpbin.org/post">
   <p>
     <label>Nom: <input type="text" name="nom"/></label>
   </p>
@@ -560,7 +560,7 @@ https://developer.mozilla.org/fr/docs/Web/Guide/HTML/Formulaires/Comment_structu
 ```html
 <h3>Devenz membre de notre association:</h3>
 <form method="post"
-      action="https://ptsv2.com./t/heg/post"
+      action="https://httpbin.org/post"
       enctype="multipart/form-data">
   <fieldset>
     <legend>Données personnelles</legend>
@@ -680,7 +680,7 @@ Remarque: pour transmettre certaines données (p. ex. fichiers), on est obligé 
 #### `<input type="file">`
 
 ```html
-<form action="https://ptsv2.com./t/heg/post"
+<form action="https://httpbin.org/post"
       method="post"
       enctype="multipart/form-data">
   <input type="file"  name="my_file"/>
