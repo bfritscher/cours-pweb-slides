@@ -973,6 +973,9 @@ on:
       - master
       - main
 
+permissions:
+  contents: write
+
 jobs:
   build_deploy:
     runs-on: ubuntu-latest
