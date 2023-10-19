@@ -1069,9 +1069,8 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 <head>
 	<meta charset="utf-8">
 	 <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
 	<title>Jumbotron Template for Bootstrap</title>
@@ -1139,7 +1138,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 ```
 <!-- .element: class="hide" -->
 
-[https://getbootstrap.com/docs/5.2/layout/grid/](https://getbootstrap.com/docs/5.2/layout/grid/)
+[https://getbootstrap.com/docs/5.3/layout/grid/](https://getbootstrap.com/docs/5.3/layout/grid/)
 
 <!-- .element: class="credits" -->
 
@@ -1155,15 +1154,14 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Hugo 0.88.1">
-	<title>Carousel Template · Bootstrap v5.2</title>
+	<title>Carousel Template · Bootstrap v5.3</title>
 
-	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
 
 	<!-- Bootstrap core CSS -->
 	 <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
 
@@ -1193,7 +1191,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 	</style>
 
 	<!-- Custom styles for this template -->
-	<link href="https://getbootstrap.com/docs/5.2/examples/carousel/carousel.css" rel="stylesheet">
+	<link href="https://getbootstrap.com/docs/5.3/examples/carousel/carousel.css" rel="stylesheet">
 </head>
 
 <body>
@@ -1414,8 +1412,7 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 		</footer>
 	</main>
 
-	<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+	<script src="https://getbootstrap.com/docs/5.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
 	</script>
 
 </body>
