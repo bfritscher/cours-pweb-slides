@@ -298,18 +298,53 @@ import "bootswatch/dist/darkly/bootstrap.min.css";
 
 
 
-### Test linting
+### Test Linting Config 1
 
 We installed two linter:
 
 - Prettier for code formatting
 - ESLint for code quality
 
-Run the command and check how the files are changed.
+But we need to set ower own preferences
 
+.prettierrc.json
+```json
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": true,
+  "tabWidth": 4,
+  "singleQuote": false,
+  "printWidth": 120,
+  "trailingComma": "none"
+}
+```
+
+
+
+### Test Linting Config 2
+
+But we need to set ower own preferences
+
+In `.eslintrc.cjs` replace
+```javascript
+'@vue/eslint-config-prettier/skip-formatting'
+```
+
+with 
+```javascript
+"@vue/eslint-config-prettier"
+```
+
+This will make lint also run format at the same time.
+
+Run the command and check how the files are changed.
 ```sh
 $ npm run lint
 ```
+
+
+
+### Test Linting
 
 Copy this line into main.js and see what happens.
 
@@ -319,6 +354,8 @@ let myvar = 'Hello World'
 
 Check the PROBLEMS tab of vscode
 (right-click to fix problem).
+
+![](images/lint-errors.png)
 
 
 
