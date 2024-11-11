@@ -164,7 +164,7 @@ $ cd labo-vue
 $ code .
 ```
 
-- install [vscode Vue Volar extension](vscode:extension/Vue.volar)
+- install [vscode Vue Official extension](vscode:extension/Vue.volar)
 - install [vscode Prettier extension](vscode:extension/esbenp.prettier-vscode)
 - install [vscode eslint extension](vscode:extension/dbaeumer.vscode-eslint)
 
