@@ -15,7 +15,7 @@
 
 
 
-# About you?
+# A propos de vous?
 
 ![](images/technical-cofounder.jpg)
 
@@ -29,20 +29,20 @@
 # Introduction
 <br/>
 
-## The Web as an Application Platform
+## Le Web comme plateforme d'applications
 
 
 
 
-### Evolution of the web
+### Evolution du web
 
-1993: Web on Mosaic
+1993: Web dans Mosaic
 ![](images/mosaic.jpg)
 <!-- .element: class="w-60" -->
 
 <!-- .element: class="w-50 float-left center" -->
 
-2014: TinkerCAD on Chrome
+2014: TinkerCAD dans Chrome
 ![](images/tinkercad.png)
 
 <!-- .element: class="w-50 float-left center" -->
@@ -53,17 +53,17 @@
 
 
 
-### 2020 in Space
+### 2020 dans l'espace
 
 ![](images/html_in_space.jpg)
 
 
 
 
-#### Web application are becoming more powerful;
+#### Les applications web deviennent de plus en plus puissantes;
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
-Multimedia<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Multimédia<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
@@ -73,22 +73,22 @@ Performance<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Device_Access_512.png)
-Device&nbsp;Access<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Accès&nbsp;aux&nbsp;appareils<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Connectivity_512.png)
-Connectivity<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Connectivité<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Offline_Storage_512.png)
-Offline/Storage<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
+Stockage/hors&nbsp;ligne<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
 
 <!-- .element: class="w-33 float-left center" -->
 
 ![](images/HTML5_Tech_Classes_512/HTML5_3D_Effects_512.png)<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
-Graphics
+Graphiques
 
 <!-- .element: class="w-33 float-left center" -->
 
@@ -97,35 +97,34 @@ http://www.w3.org/html/logo/
 <!-- .element: class="credits" -->
 
 Note:
+**Stockage/Hors ligne :**
+Les applications web peuvent démarrer plus rapidement et fonctionner même sans connexion Internet, grâce à l’App Cache HTML5, ainsi qu’aux spécifications Local Storage, Indexed DB et File API.
 
-Offline/Storage:
-Web Apps can start faster and work even if there is no internet connection, thanks to the HTML5 App Cache, as well as the Local Storage, Indexed DB, and the File API specifications.
+**Connectivité :**
+Une connectivité plus efficace permet davantage de chats en temps réel, des jeux plus rapides et une meilleure communication. Les Web Sockets et Server-Sent Events transmettent les données entre client et serveur plus efficacement que jamais.
 
-Connectivity:
-More efficient connectivity means more real-time chats, faster games, and better communication. Web Sockets and Server-Sent Events are pushing (pun intended) data between client and server more efficiently than ever before.
+**Accès aux appareils :**
+À commencer par l’API de géolocalisation, les applications web peuvent offrir des fonctionnalités et expériences riches, adaptées à l’appareil. Des innovations incroyables permettent l’accès à l’audio/vidéo (microphones, caméras), aux données locales (contacts, événements), et même à l’orientation de l’appareil.
 
-Device Access:
-Beginning with the Geolocation API, Web Applications can present rich, device-aware features and experiences. Incredible device access innovations are being developed and implemented, from audio/video input access to microphones and cameras, to local data such as contacts & events, and even tilt orientation.
+**Multimédia :**
+L’audio et la vidéo sont des éléments de première classe dans le web HTML5, s’intégrant harmonieusement à vos applications et sites. Lumière, caméra, action !
 
-Multimedia:
-Audio and video are first class citizens in the HTML5 web, living in harmony with your apps and sites. Lights, camera, action!
+**Performance :**
+Rendez vos applications web et contenus dynamiques plus rapides grâce à diverses techniques et technologies comme les Web Workers et XMLHttpRequest 2. Aucun utilisateur ne devrait attendre sur votre montre.
 
-Performance:
-Make your Web Apps and dynamic web content faster with a variety of techniques and technologies such as Web Workers and XMLHttpRequest 2. No user should ever wait on your watch.
-
-Graphics:
-Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your users with stunning visuals natively rendered in the browser.
-
+**Graphiques :**
+Entre SVG, Canvas, WebGL et les fonctionnalités 3D de CSS3, vous pouvez impressionner vos utilisateurs avec des visuels époustouflants rendus nativement dans le navigateur.
 
 
 
-## Some Trends
+
+## Tendances
 
 * Single Page Applications (SPA)
 * Progressive Web Apps (PWA)
-* Real-time
-* Tooling
-* Automated Development Workflows
+* Temps réel
+* Outils
+* Flux de travail de développement automatisés
 
 ![](images/intro-adw.png)
 
@@ -138,43 +137,43 @@ Between SVG, Canvas, WebGL, and CSS3 3D features, you're sure to amaze your user
 
 
 
-## Languages, Platforms, Communities
+## Languages, Plateformes, Communautés
 
 Client<br/>
 ![](images/intro-html-css-js.png)
 
 <!-- .element: class="w-50 float-left center" -->
 
-Server<br/>
+Serveur<br/>
 <span>?</span><!-- .element: style="font-size:4em" -->
 
 <!-- .element: class="w-50 float-left center" -->
 
 Note:
-Server can be in a lot of different languages and Frameworks:
-* PHP: Larvel, Symfony, CakePHP
-* Python: django
+Le serveur peut être développé dans de nombreux langages et frameworks différents :
+* PHP: Laravel, Symfony, CakePHP
+* Python: Django
 * Ruby: Rails
 * Java: J2EE, Spring, Play
 * .NET: ASP.NET
 
-But also in JavaScript
+Mais aussi en JavaScript
 * JS: Node.js, express.js
 
 
 
 
-### Goal: Learn to create and deploy a client web application.
+### Objectif : Apprendre à créer et déployer une application web client.
 
 ![](images/yeoman-illustration-home-inverted.png)
 
 Note:
 
-Learn theory and tools, see examples and practice!
+Apprenez la théorie et les outils, découvrez des exemples et pratiquez !
 
 
 
-## Exercices & Labs
+## Exercices & Labos
 
 ![](images/html-ski-club.png)
 
@@ -189,27 +188,27 @@ Learn theory and tools, see examples and practice!
 
 ### Planning
 
-*Part 1* <span>*Part 2*</span><!-- .element: style="margin-left: 40%;" -->
+*Partie 1* <span>*Partie 2*</span><!-- .element: style="margin-left: 40%;" -->
 
 
 * ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> HTML, CSS, JavaScript
-* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Many Exercices
-*  ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Exam
+* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Beaucoup d'exercices
+*  ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Examen
 
 <!-- .element: class="w-50" -->
 
 
 * ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> Vue.js
 * ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: CatList
-* ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Project
+* ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Projets
 
 <!-- .element: class="w-40" -->
 
-<br/>*Grades*
-* Exam: individual grade <span class="red">33%</span>
-* Project: team grade <span class="red">66%</span>
-  * Project (CatList++ / own idea)
-  * Presentation
+<br/>*Notes*
+* Examen: note individuelle <span class="red">33%</span>
+* Projet: note de groupe <span class="red">66%</span>
+  * Projet (CatList++ / propre idée)
+  * Présentation
 
 <!-- .element: class="left" -->
 
