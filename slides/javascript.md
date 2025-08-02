@@ -444,9 +444,9 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 
 ### Assignment AlgoJS
 
-1. Generate a github repository for you by  [clicking here](https://classroom.github.com/a/Ip3Gef6Z)
-2. Clone the project in VS Code
-3. `npm install` dependencies
+1. Generate a GitHub repository for you by  [clicking here](https://classroom.github.com/assignment-invitations/e525a7215a74ea0b9d1389dd2fbf0709)
+2. Clone the project and open it in VS Code
+3. In the project folder with the terminal run `npm install` to install dependencies
 4. Install [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) for VSCode
 5. Write code to pass the tests
 6. Commit and push your changes
@@ -726,10 +726,10 @@ parentElement.append(element);
 // Page ready
 document.addEventListener('DOMContentLoaded', function() {});
 ```
-  
+
 https://developer.mozilla.org/en-US/docs/Web/API/Element
 <!-- .element class="small" -->
- 
+
 https://github.com/oneuijs/You-Dont-Need-jQuery
 <!-- .element class="small" -->
 

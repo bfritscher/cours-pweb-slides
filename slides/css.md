@@ -127,13 +127,13 @@ Ne faites pas cela, à moins d'y être obligé !
     z-index: 999;
   }
 </style>
-<iframe class="demo" src="http://www.csszengarden.com/221/" style="width:1024px;height:768px;transform:scale(0.5) translate(-50%,-30%) rotate(-20deg);position:absolute;left:0;"></iframe>
+<iframe class="demo" src="//www.csszengarden.com/221/" style="width:1024px;height:768px;transform:scale(0.5) translate(-50%,-30%) rotate(-20deg);position:absolute;left:0;"></iframe>
 
-<iframe class="demo" src="http://www.csszengarden.com/214/" style="width:1024px;height:768px;transform:scale(0.5) translate(-10%,-40%) rotate(-10deg);position:absolute;left:0"></iframe>
+<iframe class="demo" src="//www.csszengarden.com/214/" style="width:1024px;height:768px;transform:scale(0.5) translate(-10%,-40%) rotate(-10deg);position:absolute;left:0"></iframe>
 
-<iframe class="demo" src="http://www.csszengarden.com/215/" style="width:1024px;height:768px;transform:scale(0.5) translate(20%,-20%) rotate(5deg);position:absolute;left:0"></iframe>
+<iframe class="demo" src="//www.csszengarden.com/215/" style="width:1024px;height:768px;transform:scale(0.5) translate(20%,-20%) rotate(5deg);position:absolute;left:0"></iframe>
 
-<iframe class="demo" src="http://www.csszengarden.com/209/" style="width:1024px;height:768px;transform:scale(0.5) translate(70%,-10%) rotate(20deg);position:absolute;left:0"></iframe>
+<iframe class="demo" src="//www.csszengarden.com/209/" style="width:1024px;height:768px;transform:scale(0.5) translate(70%,-10%) rotate(20deg);position:absolute;left:0"></iframe>
 
 
 
@@ -207,6 +207,12 @@ Exercise:
 
 En CSS les propriétés color et background-color permettent de changer l'apparence d'éléments HTML.
 
+```html
+<input type="color" value="#0000FF" />
+```
+
+<!-- .element: class="hide html-preview output-right output-w-20" -->
+
 La couleur peut être spécifiée dans plusieurs formats:
 <!-- .element: class="small" -->
 
@@ -216,8 +222,6 @@ La couleur peut être spécifiée dans plusieurs formats:
 
 <!-- .element: class="small" -->
 
-<iframe src="https://csb-l1fqq.netlify.com/?color=rgb(0,0,255)" style="width:260px;height:250px;border-radius:5px;"></iframe>
-<!-- .element: class="float-right" -->
 
 Il existe aussi une version raccourcie simplifiée du code hexadécimal. Elle remplace toutes les doubles valeurs par une valeur simple: `#00F`
 <!-- .element: class="smaller" -->

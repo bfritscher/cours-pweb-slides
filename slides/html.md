@@ -49,7 +49,7 @@ Comprendre les briques de bases qui forme les sites web par:
 - **HTML** (Hypertext Markup Language): pour donner la structure et le contenu des (hyper-)documents,
 - **HTTP** (Hypertext Transfer Protocol): le protocole de navigation et communication entre clients (browsers) et serveurs de documents HTML.
 
-6 août 1991: il met à disposition gratuitement les descriptions et les premiers prototypes (1 serveur et l'ancètre des browsers) = **naissance du Web**.
+6 août 1991: il met à disposition gratuitement les descriptions et les premiers prototypes (1 serveur et l'ancêtre des navigateurs) = **naissance du Web**.
 
 <!-- .element: class="small" -->
 
@@ -433,13 +433,13 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/ol
 
 
 
-# Exercices
+# Exercice
 
 <!-- .element: class="text-white" -->
 
 <!-- .slide: data-background-image="images/background_code.webp" -->
 
-## [HTML Texte: Maestro](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Texte_Maestro)
+<!-- ## [HTML Texte: Maestro](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Texte_Maestro) -->
 <!-- .element: class="text-white" -->
 
 ## [HTML Listes: Crackpie](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Listes_Crackpie)
@@ -756,7 +756,7 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/a
 
 
 
-# Exercices
+# Exercice
 
 <!-- .element: class="text-white" -->
 
@@ -943,7 +943,7 @@ https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Advanced
 
 
 
-# Exercices
+# Exercice
 
 <!-- .element: class="text-white" -->
 

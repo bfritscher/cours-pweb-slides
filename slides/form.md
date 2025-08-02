@@ -700,9 +700,9 @@ L'attribut `enctype="multipart/form-data"` est obligatoire dès qu'il y a au moi
 
 ### Injection contenu tier
 
-Les attaques Cross-Site Scripting (XSS) et Cross-Site Request Forgery (CSRF) sont des attaques fréquentes qui surviennent quand vous affichez des données renvoyées par un utilisateur à celui-ci ou à un autre utilisateur.
+Les attaques **Cross-Site Scripting (XSS)** et **Cross-Site Request Forgery (CSRF)** sont des attaques fréquentes qui surviennent quand vous affichez des données renvoyées par un utilisateur à celui-ci ou à un autre utilisateur.
 
-Pour éviter ces attaques, vous devez toujours vérifier les données qu'un utilisateur envoie à votre serveur et (si vous avez besoin de les afficher) essayez de ne pas afficher le contenu HTML tel que fourni par l'utilisateur. A la place, vous devez traiter les données fournies par l'utilisateur afin de ne pas les afficher verbatim.
+Pour éviter ces attaques, vous devez **toujours vérifier les données qu'un utilisateur** envoie à votre serveur et (si vous avez besoin de les afficher) essayez de **ne pas afficher le contenu HTML tel que fourni par l'utilisateur**. A la place, vous devez traiter les données fournies par l'utilisateur afin de ne pas les afficher verbatim.
 
 
 
@@ -749,6 +749,10 @@ Dans certains cas, on ne peut pas mettre le contrôle `<input>` dans l'élément
 ## [HTML Formulaire: Ski Club Bootstrap](https://github.com/bfritscher/cours-html-exercices/tree/master/HTML_Form_SkiClub_Bootstrap)
 <!-- .element: class="text-white" -->
 
+
+
+
+# Bonus
 
 
 
