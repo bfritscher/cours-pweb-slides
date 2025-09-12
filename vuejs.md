@@ -861,7 +861,7 @@ A component is just a `.vue` file that can be imported and used in another compo
 <!-- .element: class="smaller" -->
 
 ```vue
-<!-- components/MyButton.vue -->
+<!-- MyButton.vue -->
 <template>
   <button class="my-button">
     Click Me
@@ -883,7 +883,7 @@ A component is just a `.vue` file that can be imported and used in another compo
 <!-- App.vue -->
 <script setup>
 // 1. Import the component
-import MyButton from './components/MyButton.vue'
+import MyButton from './MyButton.vue'
 </script>
 
 <template>
@@ -932,7 +932,7 @@ const props = defineProps(["message"]);
 <!-- .element: class="float-left w-50" -->
 
 ```vue
-<!-- ParentComp.vue -->
+<!-- App.vue -->
 <script setup>
 import ChildComp from "./ChildComp.vue";
 </script>
@@ -974,7 +974,7 @@ function sendResponse() {
 ```
 
 ```vue
-<!-- ParentComponent.vue -->
+<!-- App.vue -->
 <script setup>
 import { ref } from "vue";
 import ChildComponent from "./ChildComponent.vue";
@@ -1018,7 +1018,7 @@ const model = defineModel();
 <!-- .element: class="float-left w-50" -->
 
 ```vue
-<!-- ParentComponent.vue -->
+<!-- App.vue -->
 <script setup>
 import { ref } from "vue";
 import CustomInput from "./CustomInput.vue";
@@ -1113,6 +1113,11 @@ Vue Router is the official library for adding navigation to your application.
 
 <!-- .element: class="small" -->
 
+https://router.vuejs.org/guide/#An-example
+
+<!-- .element: class="credits" -->
+
+
 ```js
 // main.js
 import { createApp } from "vue";
@@ -1126,7 +1131,7 @@ app.mount("#app");
 
 
 ```js
-// src/router/index.js
+// router.js
 import { createRouter, createWebHashHistory } from "vue-router";
 
 import AboutView from "../views/AboutView.vue";
@@ -1142,7 +1147,7 @@ export default router;
 ```
 
 ```vue
-<!-- src/App.vue -->
+<!-- App.vue -->
 <template>
   <header>
     <nav>
