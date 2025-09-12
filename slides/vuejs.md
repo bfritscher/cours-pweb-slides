@@ -18,9 +18,25 @@
 
 
 
-# Tooling
+### Objectifs
 
-![](images/yeoman-packages.png)<!-- .element: class="w-40" -->
+* Learn Vue.js
+* Learn by Example: LIA App
+* Only focus on frontend
+* With API's for data
+
+![](images/lia.png)
+<!-- .element: class="w-50 float-right" -->
+
+
+
+
+# 1. The Foundation
+
+- development environment
+- initializing the Vue.js application
+- establishing coding standards with ESLint and Prettier.
+- configuring version control with Git
 
 
 
@@ -32,48 +48,21 @@ Exists in all form: from notepad.exe to full IDE: [WebStorm](https://www.jetbrai
 
 ![](images/webstorm.png)<!-- .element: class="w-60 float-left" -->
 
-In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/),  [Brackets](https://brackets.io/)
+In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](https://code.visualstudio.com/)
 <br/>Online editors: [CodeSandbox](https://codesandbox.io), [StackBlitz](https://stackblitz.com/), [Cloud9](https://c9.io/), [Eclipse Che](http://www.eclipse.org/che/)
 <br/>Browser integrated (F12): [Chrome DevTools](https://developer.chrome.com/devtools)
 
 
 
+### Ecosystem
 
-<iframe src="https://roadmap.sh/frontend" width="100%" height="100%"></iframe>
+<iframe src="https://roadmap.sh/frontend" width="100%" height="80%"></iframe>
 
 <!-- .element: class="center" -->
 
 https://github.com/kamranahmedse/developer-roadmap
 
 <!-- .element: class="credits" -->
-
-
-
-
-### Preprocessors
-
-A preprocessor is a program that processes its input data to produce output, that is used as input to another program
-
-**CSS preprocessor:** Less, Sass, Stylus, ...
-
-**JS preprocessor:** CoffeeScript, TypeScript, ECMAScript 2015 (ES6) (Traceur and Babel), ...
-
-**HTML preprocessor:** Jade, Haml, Handlebars, ...
-
-**Script loader:** Require, Webpack, ...
-
-**Test framework:** Jasmine, Mocha, Qunit, ...
-
-
-
-![](images/build_pipline.png)
-
-
-
-### Example of Pre-Processors
-
-[https://jsbin.com/mumavu/9/edit?html,css,js](https://jsbin.com/mumavu/9/edit?html,css,js)
-
 
 
 
@@ -91,7 +80,6 @@ https://www.npmjs.com/
 
 
 
-
 ## Vite
 
 ![](images/logo-with-shadow.png) <!-- .element: class="float-left w-15" -->
@@ -100,335 +88,122 @@ Is a build tool that aims to provide a faster and leaner development experience 
 
 * A dev server (Hot Module Replacement / Reload)
 * A build command that bundles your code with Rollup, pre-configured to output highly optimized static assets for production.
-* Project Tempaltes for vue, react, ...
+* Project Templates for vue, react, ...
 
 
 
+### Project Dependencies & Dev Server
 
-## Lab 1: Vue.js
+Your `package.json` file lists all project dependencies. Vite, the build tool, provides a development server with Hot Module Replacement (HMR) for a fast feedback loop.
 
-Setup a local Vue.js project
+- **`npm install`**: Reads `package.json` and installs all necessary libraries into the `node_modules` folder.
+- **`npm run dev`**: Starts the local development server. Any changes you make to your source files will instantly appear in the browser.
 
-![](images/yeoman-packages.png)<!-- .element: class="w-30" -->
 
 
+## Code Quality with ESLint & Prettier
 
-### Step 0: Install development environment
+- **ESLint**: A static analysis tool that finds problematic patterns or code that doesn't adhere to style guidelines. It helps prevent bugs.
+- **Prettier**: An opinionated code formatter. It enforces a consistent code style (e.g., spacing, line breaks, quotes) across the entire project, eliminating arguments about style.
 
-Download and install [Node.js](https://nodejs.org/) to get `npm`.
+You can configure rules for both in `eslint.config.mjs` and `.prettierrc.json`.
 
-Download and install [Git](https://git-scm.com/download/win) to get `git`.
 
-Download and install [Visual Studio Code](https://code.visualstudio.com/) to get `code`.
 
+### Linting and Formatting
 
-Check that it works from the shell:
-
-```sh
-$ git --version
-git version X.Y.Z
-
-$ node --version
-vX.Y.Z
-
-$ code --version
-X.Y.Z
-...
-x64
-```
-
-
-
-### Step 1: Create a new project
-
-First change to a parent folder in which the project folder will be created.
-<!-- .element: class="red smaller" -->
-
-Use vue/vite to create a new project.
-
-```sh
-C:\temp> npm init vue@latest
-```
-
-![](images/vue-create.png)<!-- .element: class="w-80" -->
-
-<!-- .element: class="center" -->
-
-
-
-### Step 2: Install Extensions
-
-Change into the directory and launch vscode
-```sh
-$ cd labo-vue
-$ code .
-```
-
-- install [vscode Vue Official extension](vscode:extension/Vue.volar)
-- install [vscode Prettier extension](vscode:extension/esbenp.prettier-vscode)
-- install [vscode eslint extension](vscode:extension/dbaeumer.vscode-eslint)
-
-- install [vue chrome devtool extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-
-
-
-### Step 3: Install dependencies
-
-Must be done inside the project's root folder!
-<!-- .element: class="red smaller" -->
-
-```sh
-$ npm install
-```
-
-This will read `package.json` and update `node_modules` folder.
-
-
-
-### Step 4: Preview your app in the browser
-
-
-Start the development server
-```sh
-npm run dev
-```
-
-edit a file and watch livereload in action.
-
-For example add `<h1>Test vue!</h1>` to `<body>` in `./index.html`.
-<!-- .element: class="small" -->
-
-Stop the server with `ctrl+c`
-<!-- .element: class="red" -->
-
-
-
-### Step 5: Cleanup
-
-- Delete `src/assets/base.css`
-- Empty  `src/assets/main.css`
-- Replace `src/App.vue` with this code:
-
-```html
-<template>
-  <div class="container">
-    <h1>Hello Bootstrap</h1>
-    <div class="row">
-      <div class="col-sm">
-        <button class="btn btn-primary">{{ message }}</button>
-      </div>
-      <div class="col-sm">
-        <i class="fas fa-ice-cream display-1 text-primary"></i>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      message: "Hello Vue!",
-    };
-  },
-};
-</script>
-
-<style></style>
-````
-
-
-
-### Step 6: Setup bootstrap and fontawesome
-
-Check package.json (before and after)
-
-1. Add dependencies
-
-```sh
-$ npm install --save bootstrap @popperjs/core
-$ npm install --save @fortawesome/fontawesome-free
-```
-
-
-2. Inside `src/main.js` add imports
-
-```javascript
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-```
-
-
-
-### Step 6: Try more fontawesome
-
-Check that the icon works:
-
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="ice-cream" class="svg-inline--fa fa-ice-cream fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#dc3545" d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z"></path></svg>
-
-<!-- .element: class="w-15" -->
-
-Add another icon to the `App.vue template inside the button`
-
-https://fontawesome.com/icons
-
-```html
-<i class="fa-solid fa-cake-candles"></i>
-```
-
-
-
-### Step 7: Use npm to install other packages
-
-Lets try another bootstrap look.
-
-```sh
-npm install bootswatch --save
-```
-
-https://bootswatch.com/
-
-try different CSS files from bootswatch in `main.js`
-
-```javascript
-import "bootswatch/dist/darkly/bootstrap.min.css";
-```
-
-
-
-
-### Test Linting Config 1
-
-We installed two linter:
-
-- Prettier for code formatting
-- ESLint for code quality
-
-But we need to set ower own preferences
-
-.prettierrc.json
-```json
-{
-  "$schema": "https://json.schemastore.org/prettierrc",
-  "semi": true,
-  "tabWidth": 4,
-  "singleQuote": false,
-  "printWidth": 120,
-  "trailingComma": "none"
-}
-```
-
-
-
-### Test Linting Config 2
-
-But we need to set ower own preferences
-
-In `.eslintrc.cjs` replace
-```javascript
-'@vue/eslint-config-prettier/skip-formatting'
-```
-
-with 
-```javascript
-"@vue/eslint-config-prettier"
-```
-
-This will make lint also run format at the same time.
-
-Run the command and check how the files are changed.
-```sh
-$ npm run lint
-```
-
-
-
-### Test Linting
-
-Copy this line into main.js and see what happens.
-
-```js
-let myvar = 'Hello World'
-```
-
-Check the PROBLEMS tab of vscode
-(right-click to fix problem).
+- **Linting:** undefined variables, unused variables, ...
+- **Formatting:** indentation, spaces, quotes, ...
 
 ![](images/lint-errors.png)
 
 
 
+### Version Control
 
-# Multi Page App<br/>vs<br/>Single Page Application (SPA)
+- **Git**: The industry-standard version control system for tracking code changes and collaborating with others.
 
+<!-- .element: class="smaller" -->
 
+![](images/git-lifecycle.png)
 
-![](images/multipage_app.png)
+http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
-
-
-![](images/spa.png)
-
-
-
-There is a big trend towards “single-page applications”, where some of the
-responsibilities are moved from the server to the client side.
-
-* The client initially fetches a single “shell” page, which provides a rendering
-context and loads application modules (scripts, markup partials, stylesheets, etc.).
-* When the user clicks on hyperlinks, the browser does not (immediately) send an
-HTTP request to fetch a new page. Instead, the event is caught and processed by
-a JavaScript router on the client side.
-* Routing is done on the client side. The JavaScript router (typically provided by
-an application framework) looks at the target URL and decides which JavaScript
-function needs to be invoked. This function can update the DOM, sometimes in
-drastic manners (giving the impression that we move from an “Customers List”
-page to a “Customer Details” page).
-
-<!--- .element: class="small" -->
+<!-- .element: class="credits" -->
 
 
 
-![](images/8-1-ajax-pattern.png)<!--- .element: class="w-40" -->
+## VS Code Extensions for Vue
 
-<!--- .element: class="center" -->
+Extensions enhance your editor with better syntax highlighting, code completion, and error checking.
 
-http://www.websiteoptimization.com/secrets/ajax/8-1-ajax-pattern.html
-<!--- .element: class="credits" -->
-
-
-
-
-# Paper to WWW
+- **Vue - Official** (`Vue.volar`): The essential extension for Vue 3. It provides full language support for Vue's Single-File Components (`.vue` files).
+- **ESLint** (`dbaeumer.vscode-eslint`): Integrates the ESLint linter to find and fix problems in your JavaScript code right in the editor.
+- **Prettier - Code formatter** (`esbenp.prettier-vscode`): An opinionated code formatter that ensures your code has a consistent style.
 
 
-![](images/web_development_process.jpg)
 
-<!-- .element class="center" -->
+### Production Builds
+
+When you're ready to deploy your site, you need to create an optimized "build".
+
+- **`npm run build`**: This command uses Vite to compile, minify, and bundle your code into a small set of static files (HTML, CSS, JS) in a `dist/` directory. This version is what you host on a server.
+- **`npm run preview`**: A helpful command to serve your `dist/` folder locally, so you can check the production version before deploying.
 
 
-Note:
 
-Mobile application developement can also be done wiht HTML/CSS/JavaScript, with this kind of application and then be packaged into a native app with a webview.
+![](images/build_pipline.png)
+
+
+
+### CI/CD with GitHub Actions
+
+Continuous Integration/Continuous Deployment (CI/CD) automates the process of building and deploying your application.
+
+- **GitHub Actions**: A platform that lets you run automated workflows directly from your GitHub repository.
+- **Workflow File**: A YAML file (e.g., `.github/workflows/deploy.yml`) defines the steps to run, such as checking out code, installing dependencies, and running the build command, whenever you push changes.
 
 
 
 
-# Objectifs
+# Epic 0
+##  Create the project backlog
 
-* Learn SPA with Vue.js
-* Learn by Example: CatList App
-* Only focus on frontent-app
-* With API's <span class="smaller">and some cloud functions ("serverless")</span>
-
-![](images/project_cat.png)<!-- .element: class="w-50" -->
+- Create GitHub repository [here](https://classroom.github.com/a/HEaOY67z)
+- Then click projects > new project > templates > Kanban
+- Wait for issue creation
 
 
 
-![](images/shop-mobile.png)<!-- .element: class="w-20" -->
-![](images/shop-desktop.png)<!-- .element: class="w-60" -->
 
+# Epic 1
+
+## Vue.js Project Foundation
+
+### Goal: Vue.js app ready and auto-deployed to GitHub Pages
+
+
+
+
+
+
+# 2. Core Vue.js Concepts
+
+
+
+### Multi Page App vs Single Page Application (SPA)
+
+- Server computes HTML for each page request  vs Client computes HTML in the browser (SPA)
+- Full page reload vs Client redraws only parts of the page (SPA)
+- Initial page load is faster vs Initial page load is slower (SPA)
+
+<!-- .element: class="small" -->
+
+![](images/traditional-and-spa.jpg)
+
+
+https://dzone.com/articles/the-comparison-of-single-page-and-multi-page-appli
+<!-- .element: class="credits" -->
 
 
 
@@ -466,38 +241,17 @@ Mobile application developement can also be done wiht HTML/CSS/JavaScript, with 
 
 <!-- .element: class="w-80"-->
 
-https://www.jetbrains.com/lp/devecosystem-2020/
+https://www.jetbrains.com/lp/devecosystem-2024/
 
 <!-- .element: class="credits"-->
 
 
 
-![](images/java_web_frameworks.png)
-
-https://www.jetbrains.com/lp/devecosystem-2020/java/
-
-<!-- .element: class="credits"-->
-
-
-
-![](images/2021-star-history.png)
-
-<!-- .element: class="w-80"-->
-
-https://www.codeinwp.com/blog/angular-vs-vue-vs-react/
-
-<!-- .element: class="credits"-->
-
-
-https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-react/
-
-<!-- .element: class="credits"-->
-
+[![Star History Chart](https://api.star-history.com/svg?repos=vuejs/vue,facebook/react,angular/angular&type=Date)](https://www.star-history.com/#vuejs/vue&facebook/react&angular/angular&Date)
 
 
 
 ![](images/angular_feelings.png)
-
 
 
 
@@ -511,39 +265,77 @@ https://www.valuecoders.com/blog/technology-and-apps/vue-js-comparison-angular-r
 
 
 
-### Vue constructor and text interpolation
+| Feature | Options API | Composition API |
+| :--- | :--- | :--- |
+| **Code Organization** | **Scattered by option type.** Logic for one feature is split across `data`, `methods`, `computed`, etc. | **Grouped by logical feature.** All related state, methods, and computeds for one feature **can*** be kept together. |
+| **Reusability** | **Mixins.** Prone to issues like name collisions, implicit dependencies, and unclear property sources. | **Composables (Functions).** Provides explicit, type-safe, and conflict-free logic reuse. |
+| **TypeScript Integration** | **Good, but can be clumsy.** The reliance on `this` requires complex typing that can sometimes fail to infer correctly, especially with mixins. | **Excellent and natural.** Built with TS in mind. Works with standard variables and functions, leading to robust type inference. |
+| **Learning Curve** | **Lower initial curve.** The rigid structure is easy for beginners to follow ("fill in the blanks"). | **Steeper initial curve.** Requires understanding reactivity concepts like `ref` and `reactive` upfront. |
+| **Reactivity Handling** | **Implicit.** State returned from `data()` is automatically made reactive by Vue "behind the scenes". | **Explicit & Fine-Grained.** You directly use functions like `ref()`, `reactive()`, `computed()` to create and control reactive state. |
+| **`this` Context** | **Heavily reliant on `this`** to access the component instance. Can be a source of bugs in callbacks. | **No `this` needed in `<script setup>`.** You work directly with variables, simplifying the code and eliminating a class of errors. |
+| **Performance & Bundle Size**| Generally very good and performant. | **Slightly better.** The setup is more efficient, and code is more tree-shaking friendly, which can lead to smaller production bundles. |
 
-HTML
-
-<!-- .element: class="w-40 float-left" -->
-
-Javascript
-
-<!-- .element: class="w-40 float-right" -->
-
-```html
-<div id="app">
-  {{ message }}
-</div>
+<!-- .element: class="smaller" -->
 
 
-<script
-src="https://unpkg.com/vue@3">
+
+### Vue Single File Component (SFC)
+- A Vue Single File Component (SFC) is a file with a `.vue` extension that encapsulates the structure, style, and behaviour of a component in a single file.
+- script setup is a compile-time syntactic sugar that allows you to use Composition API features without the boilerplate of defining a component object.
+
+```vue
+<!-- App.vue -->
+<template>
+    <!-- HTML Markup -->
+</template>
+
+<script setup>
+    // JavaScript Logic
 </script>
+
+<style scoped>
+    /* CSS Styles */
+</style>
 ```
-<!-- .element: class="w-40 float-left" -->
+<!-- .element: class="float-left w-40" -->
 
 
-```javascript
-Vue.createApp({
-    data() {
-        return {
-        message: 'Hello Vue!'
-        };
-    }
-}).mount('#app');
+![](images/vue-format.png)
+
+<!-- .element: class="float-right w-40" -->
+
+
+https://speakerdeck.com/bhawkes/introduction-to-vue-js
+
+<!-- .element: class="credits" -->
+
+
+### Reactivity with `ref`
+
+Reactivity system: When you change your data, the user interface automatically updates.
+<!-- .element: class="smaller" -->
+
+- **`ref`**: A function used to create a reactive variable for a primitive value (like a string, number, or boolean).
+- **`.value`**: To access or modify the value of a `ref`, you must use its `.value` property in your `<script>` block. Vue automatically "unwraps" it in the template, so you don't need `.value` there.
+
+<!-- .element: class="smaller" -->
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const count = ref(0); // Create a reactive number
+
+function increment() {
+  count.value++; // Access the value with .value in the script
+}
+</script>
+
+<template>
+  <p>Count: {{ count }}</p>   <!-- No .value needed in the template -->
+  <button @click="increment">Increment</button>
+</template>
 ```
-<!-- .element: class="w-40 float-right" -->
 
 
 
@@ -565,249 +357,18 @@ https://vuejs.org/guide/essentials/template-syntax.html
 
 
 
+### Event Listeners
+We can use the v-on directive, which we typically shorten to the @ symbol, to listen to DOM events and run some JavaScript when they're triggered.
 
-### Some Directives
-
-| Directive         | Description |
-|-------------------|-------------|
-| v-model           | Create a two-way binding on a form input element or a component. |
-| v-bind            | Dynamically bind one or more attributes, or a component prop to an expression. |
-| v-if, v-else-if, v-else   | Conditionally render the element based on the truthy-ness of the expression value. |
-| v-for             | Render the element or template block multiple times based on the source data. |
-| v-on:click        | Attaches an event listener to the element. |
-
-
-https://vuejs.org/api/built-in-directives.html#built-in-directives
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Directive v-model data-bind input elements
+The usage would be `v-on:click="handler"` or with the shortcut, `@click="handler"`.
 
 ```html
-<div id="app">
-  <p><label>Nom: <input v-model="name"></label></p>
-  <p>Hello {{name}}</p>
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      name: ''  // Important attribute must exist on data object!
-    };
-  }
-}).mount('#app');
+<button v-on:click="increment">{{ count }}</button>
 ```
 
 
 
-### Directive v-model modifiers
-
-.trim - trim input<br>
-.lazy -  sync after change event
-
-```html
-<div id="app">
-  <p><label>Nom: <input v-model.trim.lazy="name"></label></p>
-  <p>Hello {{name}}</p>
-  <pre>{{name}}</pre>
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      name: ''
-    };
-  },
-}).mount('#app');
-```
-
-https://vuejs.org/guide/essentials/forms.html#modifiers
-
-<!-- .element: class="credits" -->
-
-
-
-### Directive v-model modifiers
-
-.number - cast input string to numbers
-
-```html
-<div id="app">
-  <p>
-    <label>Num1: <input v-model.number="num1" type="number"></label> +
-    <label>Num2: <input v-model.number="num2" type="number"></label>
-    = {{ num1 + num2 }}
-  </p>
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      num1: 4,
-      num2: 2
-    };
-  },
-}).mount('#app');
-```
-
-https://vuejs.org/guide/essentials/forms.html#number
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Directive show / hide elements
-
-Conditionally render the element based on the truthy-ness of the expression value.
-```html
-<div v-if="type === 'A'"> A </div>
-```
-
-Toggle’s the element’s display CSS property based on the truthy-ness of the expression value.
-```html
-<div v-show="type === 'B'"> B </div>
-```
-
-
-
-```html
-<div id="app">
-  <p><label>Nom: <input v-model="type"></label></p>
-  <div v-if="type === 'A'"> A </div>
-  <div v-show="type === 'B'"> B </div>
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      type: 'A'
-    };
-  },
-}).mount('#app');
-```
-
-
-
-### Directive conditional
-```html
-<div v-if="type === 'A'">
-  A
-</div>
-
-<div v-else-if="type === 'B'">
-  B
-</div>
-
-<div v-else-if="type === 'C'">
-  C
-</div>
-
-<div v-else>
-  Not A/B/C
-</div>
-```
-
-
-
-
-### Directive repeat elements
-
-```html
-<div v-for="item in items">
-  {{ item.text }}
-</div>
-<div v-for="(val, index) in array"></div>
-<div v-for="(val, key) in object"></div>
-<div v-for="(val, key, index) in object"></div>
-```
-
-`v-bind:key="item.id"` needed on custom elements or for move ordering purpose
-
-<!-- .element: class="small" -->
-
-
-
-```html
-<div id="app">
-  <ul>
-    <li v-for="name in names">{{ name }}</li>
-  </ul>
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      names: ['Fred','Alice', 'Bob']
-    };
-  },
-}).mount('#app');
-```
-
-
-
-
-### Vue Instance Methods
-
-- Runs whenever an update occurs
-- Not cached
-- Getter/setter
-- Typically invoked from v-on/@, but flexible
-
-
-
-```html
-<div id="app">
-  <button v-on:click="addOne">Click Me!</button> {{count}}
-</div>
-
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() {
-    return {
-      count: 0
-    };
-  },
-  methods: {
-    addOne() {
-      this.add(1);
-    },
-    add(nb) {
-      this.count += nb;
-    }
-  }
-}).mount('#app');
-```
-
-
-
-### Methods and Events
+### Events modifiers
 
 Methods used to handle events can access event object through $event
 
@@ -827,398 +388,422 @@ https://vuejs.org/guide/essentials/event-handling.html#event-modifiers
 
 
 
-```html
-<div id="app">
-  <form v-on:submit.prevent="onSubmit"></form>
 
-  <!-- chain modifiers -->
-  <button @click.stop.prevent="showCoordinates($event)">Where did you click?</button>
 
-  <!-- key modifier using keyAlias -->
-  <input @keyup.enter="onEnter">
-</div>
+# Implement ISSUE
+## Create a quantity counter
 
-<script src="https://unpkg.com/vue@3"></script>
+
+
+
+### Reactivity with `reactive`
+
+For complex data like objects and arrays, Vue provides the `reactive` function.
+
+<!-- .element: class="small" -->
+
+- **`reactive`**: Returns a reactive version of an object. Unlike `ref`, you don't use `.value` to access or modify its properties.
+
+<!-- .element: class="smaller" -->
+
+```vue
+<script setup>
+import { reactive } from "vue";
+const user = reactive({
+  name: "Jane Doe",
+  email: "jane@example.com",
+  isActive: true
+});
+function deactivateUser() {
+  user.isActive = false;
+}
+</script>
+
+<template>
+  <p>User: {{ user.name }}</p>
+  <p>Status: {{ user.isActive ? 'Active' : 'Inactive' }}</p>
+</template>
 ```
+
+
+
+## `ref` vs. `reactive`
+
+**When to use `ref` vs. `reactive`?**
+  - Use `ref` for individual primitive values.
+  - Use `reactive` for grouping multiple related values in an object.
+
+
+
+### Two-Way Binding with `v-model`
+
+`v-model` creates a two-way binding between a form input and a reactive variable. It's a shortcut that simplifies handling user input.
+
+- When the user types in the input, the `message` ref is updated.
+- If the `message` ref is changed in the script, the input field's value updates.
+
+<!-- .element: class="small" -->
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const message = ref("");
+</script>
+
+<template>
+  <!-- v-model syncs the input with the 'message' ref -->
+  <input v-model="message" placeholder="Type something..." />
+  <p>You are typing: {{ message }}</p>
+</template>
+```
+
+
+
+### Directive v-model modifiers
+
+.trim - trim input<br>
+.lazy -  sync after change event
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const name = ref("");
+</script>
+
+<template>
+  <p><label>Nom: <input v-model.trim.lazy="name"></label></p>
+  <p>Hello {{name}}</p>
+  <pre>{{name}}</pre>
+</template>
+```
+
+https://vuejs.org/guide/essentials/forms.html#modifiers
+
+<!-- .element: class="credits" -->
+
+
+
+### Directive v-model modifiers
+
+.number - cast input string to numbers
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const num1 = ref(4);
+const num2 = ref(2);
+</script>
+
+<template>
+  <p>
+    <label>Num1: <input v-model.number="num1" type="number"></label> +
+    <label>Num2: <input v-model.number="num2" type="number"></label>
+    = {{ num1 + num2 }}
+  </p>
+</template>
+```
+
+https://vuejs.org/guide/essentials/forms.html#number
+
+<!-- .element: class="credits" -->
+
+
+
+### Conditional Rendering with `v-if`
+
+The `v-if`, `v-else-if`, and `v-else` directives allow you to conditionally render blocks of HTML.
+
+- **`v-if`**: The block is only rendered if the expression is truthy.
+- **`v-else-if` / `v-else`**: Must follow a `v-if` or `v-else-if` block.
+
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const score = ref(85)
+</script>
+
+<template>
+  <div v-if="score >= 90">Grade: A</div>
+  <div v-else-if="score >= 80">Grade: B</div>
+  <div v-else>Grade: C or lower</div>
+</template>
+```
+
+
+
+### Rendering Lists with `v-for`
+
+The `v-for` directive is used to render a list of items based on an array.
+<!-- .element: class="small" -->
+
+- **Syntax**: `item in items`, where `items` is the source array and `item` is an alias for the element being rendered.
+- **`:key`**: It's crucial to provide a unique `key` for each item. This allows Vue to track each item's identity, making list updates much more efficient. Use a unique ID from your data, not the array index.
+
+<!-- .element: class="smaller" -->
+
+```vue
+<script setup>
+import { reactive } from "vue";
+const items = reactive([
+  { id: "a1", name: "First Item" },
+  { id: "b2", name: "Second Item" },
+  { id: "c3", name: "Third Item" }
+]);
+</script>
+<template>
+  <ul>
+    <li v-for="item in items" :key="item.id">
+      {{ item.name }}
+    </li>
+  </ul>
+</template>
+```
+
+
+
+### v-for with objects and arrays variations
+
+```html
+<div v-for="item in items">
+  {{ item.text }}
+</div>
+<div v-for="(val, index) in array"></div>
+<div v-for="(val, key) in object"></div>
+<div v-for="(val, key, index) in object"></div>
+```
+
+https://vuejs.org/guide/essentials/list.html
+<!-- .element: class="credits" -->
+
+
+
+### Binding Attributes with `v-bind`
+
+The `v-bind` directive (or its shorthand `:`) is used to dynamically bind one or more attributes, or a component prop to an expression.
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const isActive = ref(true);
+</script>
+
+<template>
+  <button v-bind:class="{ active: isActive }" @click="isActive = !isActive">
+    Toggle</button>
+</template>
+<style scoped>
+.active {
+  background-color: red;
+  color: white;
+}
+</style>
+```
+
+
+
+
+# Implement ISSUE
+## Create a first list + form
+## Input validation and feedback
+
+
+
+
+### Watching for Changes with `watch`
+
+A `watch` function lets you perform a "side effect" in response to a data change. Side effects are operations that affect something outside of the component, like calling an API, or writing to `localStorage`.
+<!-- .element: class="small" -->
+
+- **First argument**: The reactive source to watch (`ref` or `reactive` object).
+- **Second argument**: The callback function to run when the source changes.
+
+<!-- .element: class="smaller" -->
+
+```vue
+<script setup>
+import { ref, watch } from "vue";
+
+const question = ref("");
+
+// This watcher runs whenever the 'question' ref changes
+watch(question, (newQuestion, oldQuestion) => {
+  console.log(`Question changed from "${oldQuestion}" to "${newQuestion}"`);
+  // You could call an API here, for example.
+});
+</script>
+
+<template>
+  <input v-model="question" placeholder="Ask a question" />
+</template>
+```
+
+
+
+### Lifecycle Hooks
+
+https://vuejs.org/guide/essentials/lifecycle.html
+
+onMounted, onUpdated, onUnmounted
+
+![](images/lifecycle.png)
+
+<!-- .element: class="w-40 right top" -->
+
+```vue
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  console.log(`the component is now mounted.`)
+})
+</script>
+```
+
+
+
+### JSON
+
+JavaScript Object Notation is a lightweight data-interchange format. It is easy for *humans* to **read and write**. It is easy for *machines* to **parse and generate**. It is based on a subset of the JavaScript Programming Language
+
+```json
+{
+  "key_string": "hello",
+  "key_number": 3,
+  "key_array": ["some text", 34]
+  "key_object": {
+    "other_key": "value"
+    "key_boolean": true,
+    "null possible": null
+  }
+
+}
+```
+http://json.org/
+
+
+
+### JSON API in JavaScript
+
+|                                   |                                                              |
+|-----------------------------------|--------------------------------------------------------------|
+| JSON.stringify( *object* )        | create a JSON_string                                         |
+| JSON.parse( *JSON_string* )       | create an object from a string                               |
+
 
 ```javascript
-Vue.createApp({
-  data() {
-    return {
-      count: 0
-    };
-  },
-  methods: {
-    showCoordinates(evt) {
-      console.log(evt.clientX, evt.clientY);
-    },
-    onEnter() {window.alert('hello');},
-    onSubmit() {}
+//optional formatter and indentation spacing for pretty-print
+JSON.stringify( {hello: {text: 'world'}}, null, 2 )
+//results in the following string
+'{
+  "hello": {
+    "text": "world"
   }
-}).mount('#app');
+}'
 ```
 
 
 
+### localStorage
 
+Interface of the Web Storage API provides access to storage for a particular domain.
 
+|                                    |                                                                                        |
+|------------------------------------|----------------------------------------------------------------------------------------|
+| localStorage.length                | Returns an integer representing the number of data items stored in the Storage object. |
+| localStorage.key( number )         | will return the name of the nth key in the storage.                                    |
+| localStorage.getItem( key )        | will return that key's value.                                                          |
+| localStorage.setItem( key, value ) | will add that key to the storage, or update that key's value if it already exists.     |
+| localStorage.removeItem( key )     | will remove that key from the storage.                                                 |
+| localStorage.clear()               | will empty all keys out of the storage.                                                |
 
-### Exercice Vue.js: model, if, for
-Editer App.vue pour créer la page suivante :
-
-![](images/exo_vue_01.jpg)<!-- .element: class="w-30" -->
-
-<!-- .element: class="center box" -->
-
-- Cliquer sur « Ajouter » ajoute le montant qui se trouve dans l’input à une liste en dessous.
-- Si le montant n’est pas supérieur à 0 il faut indiquer un message d’erreur, autrement le message est caché.
-- On peut effacer un élément de la liste avec le bouton « X »
+*localStorage content can be viewed in chrome developer tools resource tab*
 
 <!-- .element: class="small" -->
 
-
-
-
-# Lab 2: deploy to github pages
-
-![](images/yeoman-ship.png)<!-- .element: class="w-30" -->
-
-
-
-### Step 0: Install
-
-Create a [github.com](https://github.com) account and install [git-scm.com](https://git-scm.com/download/win) to have a version of `git`.
-
-
-
-### Step 0: Use LF also on windows
-
-Create `.gitattributes` with content:
-
-```txt
-# Force all line endings to be \n
-* text eol=lf
-
-############################################################
-# git can corrupt binary files if they're not set to binary.
-############################################################
-
-# Apple office documents are actually folders, so treat them as binary.
-*.numbers binary
-*.pages binary
-*.keynote binary
-
-# Image files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.webp binary
-*.ico binary
-
-# Movie and audio files
-*.mov binary
-*.mp4 binary
-*.mp3 binary
-*.flv binary
-*.ogg binary
-
-# Compression formats
-*.gz binary
-*.bz2 binary
-*.7z binary
-*.zip binary
-
-# Web fonts
-*.ttf binary
-*.eot binary
-*.woff binary
-*.otf binary
-
-# Other
-*.fla binary
-*.swf binary
-*.pdf binary
-
-############################################################
-# End binary settings
-############################################################
-```
-
-
-
-### Step 1: Git Main
-
-- Create github repository [labo-xyz](https://classroom.github.com/a/KHAPN3aT)
-- Init a git repository
-- Add and Commit your code.
-- Add remote
-- Push your code to Github.
-
-
-
-### Step 2: Production version test
-
-Create a built, mimified version of your page with your .
-```sh
-npm run build
-```
-*Notice that you have a dist folder with this new content.*
-
-Test production version with:
-```sh
-npm run preview
-```
-
-
-
-### Step 3: Deploy static site on Github
-
-Github offers to serve static web pages https://pages.github.com/
-
-There are two options:
-
-- User site: http://usernameABC.github.io by creating a special repository with the name: usernameABC.github.io
-- Projet site: http://usernameABC.github.io/repositoryYXZ by creating a special branch gh-pages inside the repositoryXYZ
-
-
-Note:
-
-A special CNAME file can be put at the root of gh-pages to use a custom domain name.
-
-
-
-## Setup Github and gh-pages via Github Actions
-
-- configure github Actions to build and deploy to gh-pages
-- configure vue to support /labo-xyz/ in production
-- commit and push
-
-
-
-### Github Action Config
-
-- create folder `.github\workflows`
-- add this file `build_deploy.yml`
-
-```yml
-name: Build and Deploy to GH-Pages
-
-on:
-  push:
-    branches:
-      - master
-      - main
-
-permissions:
-  contents: write
-
-jobs:
-  build_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm ci
-      #- run: npm test
-      - run: npm run build
-
-      - name: deploy
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
-```
-
-
-
-### Configure Vite publicPath
-Edit `vite.config.js` file to handle subfolder deployment.
-```sh
-export default defineConfig({
-  ...,
-  base: process.env.NODE_ENV === "production" ? "/labo-test/" : "/",
-});
-```
-
-
-
-### Try to deploy
-
-After a successful ```npm run build``` commit all changes and push:
-```sh
-git add . --all
-git commit
-git push
-```
-
-The site can be accessed at: https://heg-web.github.io/labo-test/ when action workflow is finished.
-
-<!-- .element: class="small" -->
-
-
-
-### You did it!
-
-Your First Single Page Web Application is deployed in Production!
-
-![](images/youdidit.gif)
-
-
-
-
-### Directive dynamique attributes
-
-Dynamically bind one or more attributes, or a component prop to an expression.
-
-```html
-<div v-bind:attributes=""></div>
-
-<img v-bind:src="'/base/' + n + '.jpg'">
-```
-
-A short form exists
-
-```html
-<div :attributes=""></div>
-
-<img :src="'/base/' + n + '.jpg'">
-```
-
-
-
-### Directive bind multiples attributes
-
-```html
-<div :attr1="" :attr2=""></div>
-
-<div v-bind="{attr1: '', attr2: ''}"></div>
-```
-
-
-
-### Directives bind dynamic css classes
-
-```html
-<div v-bind:class="{ active: isActive }"></div>
-```
-
-|          |                                       |
-|----------|---------------------------------------|
-| string   | :class="'classString'"                |
-| variable | :class="classNameVariable"            |
-| array    | :class="[classVarA, 'classNameB']"    |
-| object   | :class="{className: someBooleann}"    |
-| ternary  | :class="bool ? 'active' : 'inactive'" |
-| method   | :class="classNameReturningFunction()" |
-
-https://speakerdeck.com/bhawkes/introduction-to-vue-js?slide=27
+https://developer.mozilla.org/en-US/docs/Web/API/Storage
 
 <!-- .element: class="credits" -->
 
 
 
 
+
+# Implement ISSUE
+## Save the list with LocalStorage & JSON
+
+
+
+
 ### Computed Properties
 
-- Runs only when a dependency has changed
-- Cached
-- Should be used as a property, in place of data
+`computed` properties let you create a new reactive value that is derived from other reactive data. They are cached and only re-evaluate when their dependencies change.
 
-```html
-<div id="app">
-  <p>{{date1}} {{date2()}} {{count}}</p>
-  <button @click="count+=1">render</button>
-</div>
+<!-- .element: class="small" -->
 
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-Vue.createApp({
-  data() { return { count: 0 };
-  },
-  computed: {
-    date1() { return new Date(); }
-  },
-  methods: {
-    date2() { return new Date(); }
-  }
-}).mount('#app');
-```
-
-
-
-### Computed Properties Setter
-
-Computed properties are by default getter-only, but you can also provide a setter when you need it:
-
-```javascript
-// ...
-computed: {
-  fullName: {
-    // getter
-    get() {
-      return this.firstName + ' ' + this.lastName;
-    },
-    // setter
-    set(newValue) {
-      const names = newValue.split(' ');
-      this.firstName = names[0];
-      this.lastName = names[names.length - 1];
-    }
-  }
-}
-// ...
-```
-
-
-
-
-### Vue Concepts Summary
-
-| Vue.js Concepts      | Description                                                              |
-|----------------------|--------------------------------------------------------------------------|
-| ViewModel            | the data shown to the user in the view and with which the user interacts |
-| View                 | what the user sees (the DOM)                                             |
-| Template             | HTML with additional markup                                              |
-| Directives           | extend HTML with custom attributes and elements                          |
-| Components           | a special kind of tag used for component-based application structure     |
-| Expressions          | access variables and functions from the ViewModel                        |
-| Computed             | Computed properties are cached, and only re-computed on reactive dependency changes  |
-| Methods              | Methods to be mixed into the Vue instance                                |
-
-
-
-
-### Exercice Vue.js: computed and methods
-Editer App.vue pour créer la page suivante (avec des computed et des methods):
-
-![](images/exo_vue_02.jpg)<!-- .element: class="w-30" -->
-
-<!-- .element: class="center box" -->
-
-- Récent ou Top filtre la liste selon les dernier ajouté d'abord ou de valeur décroissante.
-- L'affichage des montants est tranformé pour toujours afficher 2 chiffres après la virgule et CHF.
-- Ajouter une image du niveau: level 1 jusqu'à 10 level 2 jusqu'à 20 puis 3.
-```https://gistcdn.githack.com/bfritscher/6ff8e74b80d44616944843fe83cc5d19/raw/2d4e25748fbbe681681932444a7ef339c90d4dde/chevron_${level}.svg```
+Use computed properties for any logic in your template. This keeps your templates clean and your calculations efficient.
 
 <!-- .element: class="smaller" -->
 
+```vue
+<script setup>
+import { ref, computed } from "vue";
+
+const firstName = ref("Jane");
+const lastName = ref("Doe");
+
+// A computed property that combines first and last name
+const fullName = computed(() => {
+  return `${firstName.value} ${lastName.value}`;
+});
+</script>
+
+<template>
+  <p>Full Name: {{ fullName }}</p>
+</template>
+```
+
+
+
+### Computed Properties are cached
+
+```vue
+<script setup>
+import { ref, computed } from "vue";
+const count1 = ref(0);
+const count2 = ref(0);
+const date1 = computed(() => {
+  count2.value; // to see the effect of count2 change
+  return new Date();
+});
+const date2 = () => new Date();
+</script>
+
+<template>
+  <p>{{date1}} {{date2()}} {{count}}
+    <button @click="count1+=1">render</button>
+    <button @click="count2+=2">render2</button>
+  </p>
+</template>
+```
+
+
+
+
+
+# Implement ISSUE
+## Check items on the list
+
+
+
+
+# 3. Components
+
+Components are reusable, self-contained blocks of code. They are the building blocks of a Vue application.
 
 
 
@@ -1270,69 +855,49 @@ http://busypeoples.github.io/post/thinking-in-components-angular-js/
 
 
 
-```html
-<div id="app">
-  <my-tag></my-tag>
-</div>
+### Creating and Using a Component
 
-<script src="https://unpkg.com/vue@3"></script>
+A component is just a `.vue` file that can be imported and used in another component.
+<!-- .element: class="smaller" -->
+
+```vue
+<!-- components/MyButton.vue -->
+<template>
+  <button class="my-button">
+    Click Me
+  </button>
+</template>
+
+<style>
+.my-button {
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+}
+</style>
 ```
 
-```javascript
-app = Vue.createApp({});
-app.component('my-tag', {
-  template: `<div>{{ text }}<div>`,
-  data() {
-    return {
-      text: 'Hello From My Tag!'
-    }
-  }
-});
-app.mount('#app');
+<!-- .element: class="float-left w-40" -->
+
+```vue
+<!-- App.vue -->
+<script setup>
+// 1. Import the component
+import MyButton from './components/MyButton.vue'
+</script>
+
+<template>
+  <h1>My App</h1>
+  <!-- 2. Use it in the template -->
+  <my-button />
+</template>
 ```
 
-> Note that Vue does not enforce the W3C rules for custom tag names (all-lowercase, must contain a hyphen) though following this convention is considered good practice.
+<!-- .element: class="float-left w-60" -->
 
-<!-- .element: class="small" -->
-
-
-
-### Components using .vue
-
-![](images/vue-format.png)
-
-https://speakerdeck.com/bhawkes/introduction-to-vue-js
+ Vue does not enforce the W3C rules for custom tag names (all-lowercase, must contain a hyphen) though following this convention is considered good practice.
 
 <!-- .element: class="credits" -->
-
-
-
-### Global vs Local Registrations
-
-Global
-
-```javascript
-app.component('my-component', {
-  // options
-})
-```
-
-Local
-
-```javascript
-import MyTag from './components/MyTag';
-const Child = {
-  template: '<div>A custom component!</div>'
-}
-Vue.createApp({
-  // ...
-  components: {
-    // <my-component> will only be available in parent's template
-    'my-component': Child,
-    'my-tag': MyTag // shorthand MyTag possible
-  }
-}).mount('#app');
-```
 
 
 
@@ -1348,180 +913,140 @@ Component send changes up to the parent by emiting events, to avoid mutations!
 
 
 
-### Components Properties in Vue.js
+### Passing Data with Props
 
-In javascript use **camelCasing**, which will be converted to **kebab-case** in HTML.
+Props (short for "properties") are how you pass data from a parent component down to a child component.
 
-In compoonent expose properties
-```javascript
-{
-  //...
-  props: ['myprop', 'myProp2'],
-  // ...
-  mounted(){
-    this.myProp2;
-  }
+- **`defineProps`**: A macro used in the child component to declare the props it expects to receive.
+
+```vue
+<!-- ChildComp.vue -->
+<script setup>
+const props = defineProps(["message"]);
+</script>
+
+<template>
+  <p>{{ props.message }}</p>
+</template>
+```
+<!-- .element: class="float-left w-50" -->
+
+```vue
+<!-- ParentComp.vue -->
+<script setup>
+import ChildComp from "./ChildComp.vue";
+</script>
+
+<template>
+  <!-- Pass data to the 'message'
+    prop using a v-bind -->
+  <child-comp
+     :message="'Hello from the parent!'" />
+</template>
+```
+
+<!-- .element: class="float-right w-50" -->
+
+
+
+### Emitting Events
+
+Child components should not directly modify parent state. Instead, they should **emit events** to notify the parent that something happened. The parent then decides how to update its state. This is the "props down, events up" pattern.
+
+- **`defineEmits`**: A macro used in the child to declare the events it can emit.
+- **`$emit`**: The function used to trigger an event.
+
+
+
+```vue
+<!-- ChildComponent.vue -->
+<script setup>
+// Declare that this component can emit a 'response' event
+const emit = defineEmits(["response"])
+
+function sendResponse() {
+  emit('response', 'Hello from the child!');   // Emit the event with an optional payload
 }
+</script>
+<template>
+  <button @click="sendResponse">Send Response</button>
+</template>
 ```
 
-```html
-<my-comp v-bind:myprop="" :my-prop2></my-comp>
-```
-
-Warning: changing an attribute of a bound object mutates it's state outside the scope of the component.
-
-
-
-### Components Emitting Events
-
-Define
-```javascript
-app.component('myCheckbox', {
-  emits: ['hello'],
-  methodes: {
-    change() {
-      this.$emit('hello', 'world');
-    }
-  },
-  template: `<label>{{name}} <span @click="change">✓</span></label>`
-});
-```
-
-Use
-
-```html
-<my-checkbox @hello="doSomethingWithWorld"></my-checkbox>
-```
-
-
-
-### Complet Component Example
-
-```html
-<div id="app">
-  <my-countdown v-bind:start="count" v-on:zero="alarm()"></my-countdown>
-</div>
-<script src="https://unpkg.com/vue@3"></script>
-```
-
-```javascript
-// Vue component
-MyCountdown = {
-  template: `<div v-on:click="countDown()">{{ count }}</div>`,
-  props: ['start'],
-  emits: ['zero'],
-  data() {
-    return {
-      count: this.start
-    };
-  },
-  methods: {
-    countDown() {
-      if (this.count <= 0) return;
-      this.count = this.count -1;
-      if(this.count === 0) {
-        this.$emit('zero');
-      }
-    }
-  }
-};
-// Main Vue instance
-Vue.createApp({
-  data() {
-    return {
-      count: 10
-    };
-  },
-  methods: {
-    alarm(){
-      window.alert('Done');
-    }
-  },
-  components: { // local component reference
-    'my-countdown': MyCountdown
-  }
-}).mount('#app');
-```
-
-
-
-
-### Components Properties Validation in Vue.js
-
-Define
-```javascript
-app.component('myCheckbox', {
-  props: {
-    isOk: {
-      type: Boolean,
-      required: true,
-      default: false
-    },
-    name: {
-      type: String,
-      required: true,
-      default: 'Bob'
-    }
-  },
-  template: `<label>{{name}} <span v-if="isOk">✓</span></label>`
-});
-```
-
-Use
-
-```html
-<my-checkbox :is-ok="booleanValue"></my-checkbox>
-```
-
-
-
-### Components Properties Validation GOTCHA
-
-Objects and arrays need their defaults to be returned from a function:
-
-```javascript
-text: {
-  type: Object,
-  default: function () {
-    return { message: 'hello mr. magoo' }
-  }
+```vue
+<!-- ParentComponent.vue -->
+<script setup>
+import { ref } from "vue";
+import ChildComponent from "./ChildComponent.vue";
+const childMsg = ref("");
+function handleResponse(msg) {
+  childMsg.value = msg
 }
+</script>
+<template>
+  <!-- Listen for the 'response' event with @response -->
+  <ChildComponent @response="handleResponse" />
+  <p>Message from child: {{ childMsg }}</p>
+</template>
 ```
 
-[Example](https://codepen.io/sdras/pen/63d98696878200f6c0e987cd58341c39)
 
 
-To listen for a native event on the root element of component, .native has to be added:
-<!-- .element class="small" -->
-`<my-checkbox @click.native="doSomething"></my-checkbox>`
-<!-- .element class="small" -->
- By default, v-model on a component uses **value** as the prop and **input** as the event
-<!-- .element class="small" -->
+### Simplifying `v-model` on Components
 
+You can use `v-model` on your own components to create a two-way binding, just like with native inputs. This is useful for creating custom form controls.
 
+<!-- .element: class="small" -->
 
+- **`defineModel`**: A new (Vue 3.4+) macro that makes this easy. It automatically declares a `modelValue` prop and an `update:modelValue` event.
 
-### Custom Events
+<!-- .element: class="smaller" -->
 
-Events can also be used to communicated between components.
-Vue.js events do not *bubble up* or *trickle down* the tree.
+```vue
+<!-- CustomInput.vue -->
+<script setup>
+// This sets up a v-model binding
+const model = defineModel();
+</script>
 
-We attach and emit on a common object for example the **$root**.
-
-```javascript
-// in component A
-const clickHandler = clickCount => {
-  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
-}
-this.$root.$on('i-got-clicked', clickHandler);
-
-// in component B
-this.$root.$emit('i-got-clicked', this.clickCount);
-
-// in component A to stop listening
-// Stop listening.
-this.$root.$off('i-got-clicked', clickHandler);
+<template>
+<!-- use model variable -->
+  <input v-model="model" />
+</template>
 ```
+
+<!-- .element: class="float-left w-50" -->
+
+```vue
+<!-- ParentComponent.vue -->
+<script setup>
+import { ref } from "vue";
+import CustomInput from "./CustomInput.vue";
+
+const text = ref("Initial value");
+</script>
+
+<template>
+  <!-- Now you can use v-model directly -->
+  <CustomInput v-model="text" />
+  <p>Current value: {{ text }}</p>
+  <!-- This is equivalent to: -->
+  <CustomInput :modelValue="text"
+    @update:modelValue="text = $event" />
+</template>
+```
+
+<!-- .element: class="float-right w-50" -->
+
+
+
+
+# Implement ISSUE
+
+- Create a ShoppingListItem component
+- Create a quantity component
+- Delete Items by Quantity
+- Clear Completed Items
 
 
 
@@ -1564,152 +1089,112 @@ https://vuejs.org/guide/built-ins/transition-group.html#move-transitions
 
 
 
-### Exercice Vue.js: components
-Transformer (Refactor) l'application en composant selon:
+# Implement ISSUE
 
-![](images/exo_vue_03.jpg)<!-- .element: class="w-40" -->
-
-<!-- .element: class="center box" -->
-
-- Créer une fonction reutilisable toChf() qui retourne un nombre formaté en chf.
-- Ajouter, transformer le code, pour que l'application fonctionne encore de la même façon.
-
-<!-- .element: class="small" -->
-
-
-
-### Exercice Vue.js: transitions
-
-Ajouter des effets de transitions au message et à la liste:
-
-![](images/exo_vue_04.gif)<!-- .element: class="w-40" -->
-
-<!-- .element: class="center box" -->
+## List Transitions
 
 
 
 
-### JSON
+# 4. Routing with Vue Router
 
-JavaScript Object Notation is a lightweight data-interchange format. It is easy for *humans* to **read and write**. It is easy for *machines* to **parse and generate**. It is based on a subset of the JavaScript Programming Language
-
-```json
-{
-  "key_string": "hello",
-  "key_number": 3,
-  "key_array": ["some text", 34]
-  "key_object": {
-    "other_key": "value"
-    "key_boolean": true,
-    "null possible": null
-  }
-
-}
-```
-http://json.org/
+## Virtual pages in a SPA with Vue
 
 
 
-### JSON API in JavaScript
+### Vue Router Basics
 
-|                                   |                                                              |
-|-----------------------------------|--------------------------------------------------------------|
-| JSON.stringify( *object* )        | create a JSON_string                                         |
-| JSON.parse( *JSON_string* )       | create an object from a string                               |
+Vue Router is the official library for adding navigation to your application.
 
-
-```javascript
-//optional formatter and indentation spacing for pretty-print
-JSON.stringify( {hello: {text: 'world'}}, null, 2 )
-//results in the following string
-'{
-  "hello": {
-    "text": "world"
-  }
-}'
-```
-
-
-
-
-### localStorage
-
-Interface of the Web Storage API provides access to storage for a particular domain.
-
-|                                    |                                                                                        |
-|------------------------------------|----------------------------------------------------------------------------------------|
-| localStorage.length                | Returns an integer representing the number of data items stored in the Storage object. |
-| localStorage.key( number )         | will return the name of the nth key in the storage.                                    |
-| localStorage.getItem( key )        | will return that key's value.                                                          |
-| localStorage.setItem( key, value ) | will add that key to the storage, or update that key's value if it already exists.     |
-| localStorage.removeItem( key )     | will remove that key from the storage.                                                 |
-| localStorage.clear()               | will empty all keys out of the storage.                                                |
-
-*localStorage content can be viewed in chrome developer tools resource tab*
+- **`createRouter`**: Creates a router instance where you define your routes.
+- **Routes**: A route maps a URL path (e.g., `/about`) to a specific component.
+- **`<RouterView>`**: A component that acts as a placeholder, rendering the component for the current URL.
+- **`<RouterLink>`**: A component for creating navigation links. It renders as an `<a>` tag but handles navigation without a full page reload.
 
 <!-- .element: class="small" -->
 
-https://developer.mozilla.org/en-US/docs/Web/API/Storage
-
-<!-- .element: class="credits" -->
-
-
-
-
-### Lifecycle Hooks
-
-https://vuejs.org/guide/essentials/lifecycle.html
-
-created, mounted, unmounted, ...
-
-![](images/lifecycle.png)
-
-<!-- .element: class="w-40 right top" -->
-
-
-
-
-### Exercice Vue.js: localStorage
-
-Persister les données localement
-
-- Sauvegarder dans le localstorage la liste à chaque fois que celle-ci change.
-- Au chargement de la page, s'il y a une liste sauvegardé dans le localstorage, alors récupérer cette valeur.
-
-
-
-
-# Multiples Views and Router
-
-A SPA has to support multiple virtual views to simulate pages.
-
-This can be achieved with a router, routes and components.
-
-
-
-```javascript
-const router = createRouter({
-  routes: [
-    // dynamic segments start with a colon
-    { path: '/user/:id', name: 'user', component: User }
-  ]
-});
+```js
+// main.js
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router"; // Import the router
+const app = createApp(App);
+app.use(router); // Tell Vue to use the router
+app.mount("#app");
 ```
 
-```html
-<!-- will host the component corresponding to the route -->
-<router-view></router-view>
 
-<!-- Vue instance has a special property with route params -->
-<div>{{ $route.params.id }}</div>
 
-<!-- create links by lookup of the route -->
-<router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link>
+```js
+// src/router/index.js
+import { createRouter, createWebHashHistory } from "vue-router";
+
+import AboutView from "../views/AboutView.vue";
+import HomeView from "../views/HomeView.vue";
+
+const routes = [
+  { path: "/", component: HomeView },
+  { path: "/about", component: AboutView }
+];
+
+const router = createRouter({ history: createWebHashHistory(), routes });
+export default router;
 ```
 
-```javascript
-// changing route in code.
-this.$router.push({ name: 'user', params: { id: 123 }})
+```vue
+<!-- src/App.vue -->
+<template>
+  <header>
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+    </nav>
+  </header>
+
+  <!-- The component for the current route will be rendered here -->
+  <RouterView />
+</template>
+```
+
+
+
+### Route Parameters
+
+You can define dynamic segments in your URL, called "params," to pass data to a route. This is common for detail pages (e.g., a specific user's profile).
+
+- **Dynamic Route**: Define a route with a colon (e.g., `/users/:id`).
+- **`useRoute`**: A function that gives you access to the current route object, including its params.
+
+
+
+```js
+// src/router/index.js
+// ...
+const routes = [
+  // ...
+  { path: "/users/:id", component: UserProfileView }
+];
+// ...
+```
+
+```vue
+<!-- src/views/UserProfileView.vue -->
+<script setup>
+import { useRoute } from 'vue-router'
+import { ref, onMounted } from 'vue'
+
+const route = useRoute()
+
+onMounted(() => {
+  // You can now fetch data for this specific user
+  console.log(`Fetching data for user ID: ${route.params.id}`)
+})
+</script>
+
+<template>
+  <h1>User Profile</h1>
+  <p>Displaying profile for user #{{ route.params.id }}</p>
+</template>
 ```
 
 
@@ -1728,17 +1213,20 @@ this.$router.push({ name: 'user', params: { id: 123 }})
 
 
 
-### $route.params vs component props
+### Programmatic Navigation
+You can navigate to different routes programmatically using the router instance.
+- **`useRouter`**: A function that gives you access to the router instance, allowing you to navigate in code.
+- prefer router-link if possible
 
-Using $route in your component creates a tight coupling with the route (views not reusable components).
-
-$route.params are visible in the URL and string only!
-
-Props are parameters of a component to pass down variables of any type.
-
-It is possible to [Pass Props to Route Components](https://router.vuejs.org/guide/essentials/passing-props.html) to decouple them.
-
-<!-- .element: class="smaller" -->
+```vue
+<script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+function goToUser(id) {
+  router.push(`/users/${id}`)
+}
+</script>
+```
 
 
 
@@ -1760,28 +1248,158 @@ beforeRouteUpdate (to, from, next) {
 
 
 
+### Sharing State Across Routes
 
-### Exercice Vue.js: router
-
-Remplacer `createWebHistory` avec `createWebHashHistory` dans `src/router/index.js`
-
-Ajouter deux pages supplémentaires pour créer ceci:
-
-![](images/exo_vue_06.png)<!-- .element: class="w-50" -->
-
-<!-- .element: class="center box" -->
+When your application grows, you'll often need to share state between different pages (components). The simplest way to do this is to extract your reactive state into its own JavaScript file.
 
 
+This is a basic form of "state management." For more complex scenarios, consider using a dedicated state management library like Pinia.
+<!-- .element: class="small" -->
 
-### Exercice Vue.js: router
 
-- Un lien principal Search,
-- Une page Search qui génère dynamiquement l'attribut `to` d'un `<router-link>` selon le texte d'un input.
-- Une page Profile qui affiche le nom du paramètre de l'URL.
+```js
+// src/state.js
+import { reactive } from "vue";
 
-![](images/exo_vue_06.png)<!-- .element: class="w-50" -->
+// Create a reactive object that can be imported anywhere
+export const store = reactive({
+  user: null,
+  cart: []
+});
 
-<!-- .element: class="center box" -->
+export function login(userData) {
+  store.user = userData;
+}
+```
+
+
+
+```vue
+<!-- AnyComponent.vue -->
+<script setup>
+// Import the shared state
+import { store } from '../state.js'
+</script>
+
+<template>
+  <div v-if="store.user">
+    Welcome, {{ store.user.name }}
+  </div>
+    <div v-else>
+        Please log in.
+        <button @click="login({ name: 'User' })">Log In</button>
+    </div>
+</template>
+```
+
+
+
+# Implement ISSUE
+
+### Create router
+### Route parameters
+
+
+
+
+## API and Remote Data
+
+Example api: https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc
+
+Chrome DevTools allows to view Network Traffic
+
+![](images/api_devtools.png)
+
+
+
+### Testing API advanced requests
+
+Most API require additional header in addition of other request than GET.
+
+![](images/insomnia.png)<!-- .element: class="w-30" --> [Insomnia](https://insomnia.rest/download/#windows) a tool to test apis
+
+![](images/api_insomnia.png)
+
+
+
+## API with real data
+
+- https://countapi.xyz/
+- https://docs.thedogapi.com/
+- https://docs.thecatapi.com/
+- https://transport.opendata.ch/docs.html
+- http://api.themoviedb.org/3/ //need proxy for api key or cors
+- https://www.themealdb.com/api.php
+- https://www.thecocktaildb.com/api.php
+
+<!-- .element: class="smaller" -->
+
+
+
+### Fetching Data from an API
+
+Most web applications need to fetch data from a server. The browser's `fetch` API is the standard way to do this.
+
+- **`async/await`**: Modern syntax for handling asynchronous operations like API calls, making the code easier to read.
+- **Loading State**: It's good practice to track a "loading" state so you can show a spinner or message to the user while the data is being fetched.
+
+
+
+```vue
+<script setup>
+import { ref } from "vue";
+
+const data = ref(null);
+const isLoading = ref(false);
+const error = ref(null);
+
+async function loadData() {
+  isLoading.value = true;
+  try {
+    const response = await fetch("https://api.thecatapi.com/v1/images/search", {
+        headers: {
+            'x-api-key': 'DEMO-API-KEY'
+        }
+    });
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    data.value = await response.json()
+  } catch (e) {
+    error.value = e.message;
+  } finally {
+    isLoading.value = false;
+  }
+}
+</script>
+
+<template>
+  <div v-if="isLoading">Loading...</div>
+  <div v-else-if="error">Error: {{ error }}</div>
+  <pre v-else>{{ data }}</pre>
+</template>
+```
+
+
+
+
+# Implement ISSUE
+
+### Getting Product details from the web
+
+
+
+
+# 5. LLM with Firebase
+
+
+
+### Integrating with Third-Party Services (e.g., Firebase)
+
+Services like Firebase provide backend functionality (database, authentication, AI models) that you can easily integrate into your Vue app.
+
+- **Firebase SDK**: You install the Firebase library via `npm` and initialize it with your project's configuration keys.
+- **Service Abstraction**: It's a good practice to wrap third-party logic in your own "service" file (e.g., `src/services/firebase.js`). This keeps your components clean and makes it easier to manage the integration.
 
 
 
@@ -1792,35 +1410,28 @@ Ajouter deux pages supplémentaires pour créer ceci:
 
 ### Access DOM through Refs
 
-**ref** is used to register a reference to an element or a child component. The reference will be registered under the parent component’s $refs object.
+**ref** is used to register a reference to an element or a child component.
 
-```html
-<div id="app">
-  <div ref="someID"></div>
-</div>
-
-<script src="https://unpkg.com/vue@2"></script>
-```
-
-```javascript
-Vue.createApp({
-  mounted() {
-    this.$refs.someID.innerText = 'DOM Direct Manipulation is BAD!';
+```vue
+<script setup>
+import { ref } from "vue";
+const inputRef = ref(null);
+function focusInput() {
+  if (inputRef.value) {
+    inputRef.value.focus();
   }
-}).mount('#app');
+}
+</script>
+
+<template>
+    <input ref="inputRef" />
+    <button @click="focusInput">Focus Input</button>
+</template>
 ```
-
-
-
-### Watches
-
-![](images/data.png)
-
 
 
 
 ### Vue.js more
-- Composition API
 - Mixins
 - Custom Directives
 - Slots
@@ -1829,7 +1440,9 @@ Vue.createApp({
 - Server-Side Rendering
 - Code Splitting
 - Route lazy loading
-- State Management: Pina
+- State Management: Pinia
+- Testing: Vue Test Utils, Jest
+- TypeScript support
 
 
 
@@ -1837,13 +1450,12 @@ Vue.createApp({
 
 - https://vuejs.org/guide/introduction.html
 - https://vuejs.org/api/
-- https://www.grafikart.fr/formations/vuejs (attention Vue.js 2)
+- https://www.grafikart.fr/formations/vuejs
 
 
 
 
 # JavaScript Asynchronous Programming
-
 
 
 
@@ -1903,7 +1515,6 @@ processed, i.e. when a response has been received. The
 callback function has access to the payload.
 
 
-
 ## Beyond simple callbacks...
 
 * The principle of passing a callback function when invoking
@@ -1961,7 +1572,6 @@ milkCow( function() {
 
 SUCCESS
 <!-- .element: class="fragment success" -->
-
 
 
 
@@ -2036,7 +1646,6 @@ F  result  available
 But welcome to the **"callback hell"** aka **"callback pyramid"**
 
 <!-- .element: class="clear fragment" -->
-
 
 
 
@@ -2117,9 +1726,7 @@ functions and receive a result when the operation completes.
 
 
 
-
 # Async libs to the rescue: Promise
-
 
 
 
@@ -2180,7 +1787,6 @@ https://github.com/promises-aplus/promises-spec
 
 
 
-
 ### Promise in ECMAScript 2015
 
 ```javascript
@@ -2233,201 +1839,6 @@ Promise.all(arrayOfPromises).then(function(arrayOfResults) {
 https://developers.google.com/web/fundamentals/getting-started/primers/promises
 
 <!-- .element: class="credits" -->
-
-
-
-
-## API and Remote Data
-
-Example api: https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc
-
-Chrome DevTools allows to view Network Traffic
-
-![](images/api_devtools.png)
-
-
-
-### Testing API advanced requests
-
-Most API require additional header in addition of other request than GET.
-
-![](images/insomnia.png)<!-- .element: class="w-30" --> [Insomnia](https://insomnia.rest/download/#windows) a tool to test apis
-
-![](images/api_insomnia.png)
-
-
-
-### Getting JSON content with Fetch
-
-```javascript
-fetch('./api/some.json')
-  .then(response => {
-      return response.json();
-    }
-  )
-  .then(data => {
-      console.log(data);
-  })
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err);
-  });
-```
-
-https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
-
-
-### Getting JSON content with axios
-
-```sh
-npm install axios --save
-```
-
-```javascript
-import axios from 'axios';
-
-axios.get('https://api.thecatapi.com/v1/images/search', {
-          headers: {
-            'x-api-key': 'DEMO-API-KEY'
-          }
-        })
-  .then(response => {
-    console.log(response.headers);
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-```
-
-
-
-### Load Data in Vue.js
-
-```javascript
-import { createApp } from "vue";
-import axios from "axios";
-
-createApp({
-  data() {
-    return {
-      dataLoaded: false,
-      apiReply: {}
-    };
-  },
-  methods: {
-    loadData: function () {
-      axios
-        .get("https://api.thecatapi.com/v1/images/search")
-        .then((response) => {
-          this.apiReply = response.data;
-          this.dataLoaded = true;
-        });
-    }
-  },
-  created() {
-    // or mounted
-    this.loadData();
-  }
-}).mount("#app");
-```
-[![Edit Vue Axios](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/demo-vue-axios-piguss)
-
-
-
-
-### Exercice Vue.js: axios
-Transformer le projet précédent pour utiliser le site thecatapi.com:
-
-![](images/exo_vue_07.png)<!-- .element: class="w-80" -->
-
-<!-- .element: class="center box" -->
-
-
-
-### Exercice Vue.js: axios
-
-- Entrer du texte dans la boîte de recherche affiche une liste de Breeds
-- Cliquer sur un élément de la liste amène à une page détaille.
-- La page détaille utilise le code id de la Breed récupérer en tant que paramètre d'URL pour rechercher 6 photos de cette race.
-
-
-
-
-## API with real data
-
-- https://countapi.xyz/
-- https://docs.thedogapi.com/
-- https://docs.thecatapi.com/
-- https://transport.opendata.ch/docs.html
-- http://api.themoviedb.org/3/ //need proxy for api key or cors
-- https://www.themealdb.com/api.php
-- https://www.thecocktaildb.com/api.php
-
-<!-- .element: class="smaller" -->
-
-
-
-### Google Cusom Search API
-
-https://developers.google.com/custom-search/json-api/v1/reference/cse/list
-
-```javascript
-`https://www.googleapis.com/customsearch/v1?cx=011288001747608865807:a7rxzv4srri&q=${item.name}&searchType=image&safe=high&key=AIzaSyBlh2KvC84vD0cebFOlMSnLe0-Dx1mc-2A`
-```
-
-
-
-
-### Async / Await
-
-```javascript
-async function myFirstAsyncFunction() {
-  try {
-    const fulfilledValue = await promise;
-  }
-  catch (rejectedValue) {
-    // …
-  }
-}
-```
-
-
-
-```javascript
-function logFetch(url) {
-  return fetch(url)
-    .then(response => response.text())
-    .then(text => {
-      console.log(text);
-    }).catch(err => {
-      console.error('fetch failed', err);
-    });
-}
-
-async function logFetch(url) {
-  try {
-    const response = await fetch(url);
-    console.log(await response.text());
-  }
-  catch (err) {
-    console.log('fetch failed', err);
-  }
-}
-```
-
-```javascript
-// map some URLs to json-promises
-const jsonPromises = urls.map(async url => {
-  const response = await fetch(url);
-  return response.json();
-});
-```
-
-https://developers.google.com/web/fundamentals/getting-started/primers/async-functions
-
-<!-- .element: class="credits" -->
-
 
 
 
@@ -2591,58 +2002,6 @@ https://firebase.google.com/docs/database/security/quickstart
 ### Firebase Login:
 
 https://gist.github.com/bfritscher/dea68fd13dbd172647eb60ebe5a2c3e5
-
-
-
-
-### Serverless: Firebase Cloud Functions
-
-https://github.com/firebase/functions-samples/tree/master/exif-images
-
-https://firebase.google.com/docs/reference/functions/functions.storage.ObjectMetadata
-
-https://cloud.google.com/vision/docs/reference/libraries#client-libraries-install-nodejs
-
-https://firebase.google.com/docs/functions/config-env
-
-
-
-### Firebase Functions: Keeping Secrets
-
-```sh
-$ firebase functions:config:set service.name="value"
-firebase functions:config:get
-```
-
-```javascript
-functions.config().someservice.id
-
-exports.groupA = {
-  function1: functions.https.onRequest(...);
-  function2: functions.database.ref('\path').onWrite(...);
-}
-exports.groupB = require('./groupB');
-```
-
-
-
-
-### Deploy to Firebase
-
-```sh
- $ firebase deploy --only functions
- $ firebase deploy --only hosting
- $ firebase deploy --only functions:function1,function2
-```
-
-
-
-## Possible next steps after deploy
-
-- Analytics & SPA
-  - Virutal page views
-  - Events
-- A/B testing your site!
 
 
 
