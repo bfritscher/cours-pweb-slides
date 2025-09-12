@@ -56,7 +56,7 @@ In between: [Notepad++](https://notepad-plus-plus.org/), [Visual Studio Code](ht
 
 ### Ecosystem
 
-<iframe src="https://roadmap.sh/frontend" width="100%" height="80%"></iframe>
+<iframe src="images/frontend.pdf" width="100%" height="80%"></iframe>
 
 <!-- .element: class="center" -->
 
@@ -308,6 +308,7 @@ https://www.jetbrains.com/lp/devecosystem-2024/
 https://speakerdeck.com/bhawkes/introduction-to-vue-js
 
 <!-- .element: class="credits" -->
+
 
 
 ### Reactivity with `ref`
