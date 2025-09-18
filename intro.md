@@ -21,7 +21,7 @@
 
 <!-- .element: class="center nopdf" -->
 
-[https://marmix.ig.he-arc.ch/poll/](https://marmix.ig.he-arc.ch/poll/)
+[https://quiz.bf0.ch/](https://quiz.bf0.ch/)
 
 
 
@@ -179,7 +179,7 @@ Apprenez la théorie et les outils, découvrez des exemples et pratiquez !
 
 <!-- .element: class="w-40 float-left pdf-w-40 pdf-float-left" -->
 
-![](images/project_cat.png)
+![](images/lia.png)
 
 <!-- .element: class="w-40 float-right pdf-w-40 pdf-float-right" -->
 
@@ -199,7 +199,7 @@ Apprenez la théorie et les outils, découvrez des exemples et pratiquez !
 
 
 * ![](./images/books.svg)<!-- .element: style="width:32px;margin:0" --> Vue.js
-* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: CatList
+* ![](./images/papapishu-Lab-icon-3-green.svg)<!-- .element: style="width:32px;margin:0" --> Lab: LIA
 * ![](./images/rocket-icon.png)<!-- .element: style="width:32px;margin:0" --> Projets
 
 <!-- .element: class="w-40" -->
@@ -207,7 +207,7 @@ Apprenez la théorie et les outils, découvrez des exemples et pratiquez !
 <br/>*Notes*
 * Examen: note individuelle <span class="red">33%</span>
 * Projet: note de groupe <span class="red">66%</span>
-  * Projet (CatList++ / propre idée)
+  * Projet (votre idée)
   * Présentation
 
 <!-- .element: class="left" -->
