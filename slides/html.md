@@ -182,7 +182,7 @@ Retour à la ligne
 
 <!-- .element: class="html-preview output-right output-w-20" -->
 
-Ou une ligne vertical
+Ou une ligne horizontale
 
 ```html
 <p>Du texte ...</p>
