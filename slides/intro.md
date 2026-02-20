@@ -15,7 +15,7 @@
 
 
 
-# A propos de vous?
+# À propos de vous ?
 
 ![](images/technical-cofounder.jpg)
 
@@ -34,9 +34,9 @@
 
 
 
-### Evolution du web
+### Évolution du web
 
-1993: Web dans Mosaic
+1993 : Le Web dans Mosaic
 ![](images/mosaic.jpg)
 <!-- .element: class="w-60" -->
 
@@ -47,7 +47,7 @@
 
 <!-- .element: class="w-50 float-left center" -->
 
-[![](images/Evolution_of_the_web.jpg)](http://www.evolutionoftheweb.com/)
+[![](images/Evolution_of_the_web.jpg)](https://web.archive.org/web/20210129140625/http://www.evolutionoftheweb.com/)
 
 <!-- .element: class="center" -->
 
@@ -60,7 +60,7 @@
 
 
 
-#### Les applications web deviennent de plus en plus puissantes;
+#### Les applications web deviennent de plus en plus puissantes :
 
 ![](images/HTML5_Tech_Classes_512/HTML5_Multimedia_512.png)
 Multimédia<!-- .element: class="w-60 pdf-w-30 pdf-float-left" -->
@@ -137,7 +137,7 @@ Entre SVG, Canvas, WebGL et les fonctionnalités 3D de CSS3, vous pouvez impress
 
 
 
-## Languages, Plateformes, Communautés
+## Langages, Plateformes, Communautés
 
 Client<br/>
 ![](images/intro-html-css-js.png)
@@ -163,7 +163,7 @@ Mais aussi en JavaScript
 
 
 
-### Objectif : Apprendre à créer et déployer une application web client.
+### Objectif : apprendre à créer et déployer une application web cliente.
 
 ![](images/yeoman-illustration-home-inverted.png)
 

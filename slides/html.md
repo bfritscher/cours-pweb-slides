@@ -24,7 +24,7 @@
 
 # Introduction
 
-Comprendre les briques de bases qui forme les sites web par:
+Comprendre les briques de base qui forment les sites web par :
 
 ![](images/html_tag_cloud.png)
 
@@ -42,7 +42,7 @@ Comprendre les briques de bases qui forme les sites web par:
 
 ### Web et Hypertextes : HTML & HTTP
 
-1990, au CERN à Genève, Tim Berners Lee décide d'utiliser le modèle d'hypertexte pour un système de partage sur Internet de documents entre physiciens. Il développe:
+1990, au CERN à Genève, Tim Berners-Lee décide d'utiliser le modèle d'hypertexte pour un système de partage sur Internet de documents entre physiciens. Il développe :
 
 <!-- .element: class="small" -->
 
@@ -62,7 +62,7 @@ https://worldwideweb.cern.ch/
 
 Le web est en perpétuelle évolution, chaque navigateur proposant des améliorations perpétuelles.
 
-Le consortium W3C propose régulièrement des nouvelles versions du standard HTML et CSS.
+Le consortium W3C propose régulièrement de nouvelles versions du standard HTML et CSS.
 
 ![](images/html_css_js.png)
 
@@ -70,13 +70,13 @@ Le consortium W3C propose régulièrement des nouvelles versions du standard HTM
 
 
 
-### Trois Langages sont utilisés
+### Trois langages sont utilisés
 
 - langage de **structure** d'un document (HTML)
 - langage de **présentation** de l'information (CSS)
 - langage de **validation** et **construction** de données (JavaScript)
 
-Le langage JavaScript permet également d'exprimer des algorithmes complets, pour construire des documents dynamiques, et des traitements de l'information dans un browser web.
+Le langage JavaScript permet également d'exprimer des algorithmes complets, pour construire des documents dynamiques, et des traitements de l'information dans un navigateur web.
 
 <!-- .element: class="small" -->
 
@@ -93,7 +93,7 @@ Un langage informatique = **syntaxe** + **sémantique**
 
 
 
-## Standard des langages
+## Standards des langages
 
 Documents en ligne qui évoluent!
 
@@ -101,7 +101,7 @@ Documents en ligne qui évoluent!
 - CSS [https://www.w3.org/Style/CSS/](https://www.w3.org/Style/CSS/)
 - JavaScript [https://www.ecma-international.org/ecma-262/](https://www.ecma-international.org/ecma-262/)
 
-Souvant technique, donc il est préférable de consulter des guides et des références illustrées comme [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web)
+Souvent techniques, ces documents sont plus faciles à aborder avec des guides et des références illustrées comme [Mozilla Developer Network (MDN)](https://developer.mozilla.org/fr/docs/Web)
 
 <!-- .element: class="small" -->
 
@@ -139,13 +139,13 @@ Une page HTML = un ensemble d’éléments de contenu encadrés par des balises 
 
 <!-- .element: class="center" -->
 
-[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started)
+[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax)
 
 
 
 ### Exemples: `<h1>` `<h2>`, `<p>`
 
-Des éléments de titres:
+Des éléments de titre :
 ```html
 <h1>Apprendre à faire son site</h1>
 <h2>Chapitre 1: HTML</h2>
@@ -158,7 +158,7 @@ Des éléments de titres:
 <br/>
 <br/>
 
-Un élément paragraphe:
+Un élément de paragraphe :
 ```html
 <p>Un texte est composé de
    phrases       regroupées en paragraphes.</p>
@@ -203,7 +203,7 @@ Une balise peut avoir des attributs `nom_attribut="valeur"`:
 
 ![](images/attribut-chat-grincheux.png)
 
-[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started)
+[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax)
 
 <!-- .element: class="credits" -->
 
@@ -216,7 +216,7 @@ Une balise peut avoir des attributs `nom_attribut="valeur"`:
 
 <br>
 
-id et class existe sur toutes les balises et sont utilisées pour du CSS.
+id et class existent sur toutes les balises et sont utilisés pour le CSS.
 
 <!-- .element: class="small" -->
 
@@ -231,14 +231,14 @@ id et class existe sur toutes les balises et sont utilisées pour du CSS.
 
 <!-- .element: class="html-preview output-right output-w-20" -->
 
-La balise image doit avoir un attribut:
-- `src`: liens vers le fichier image
+La balise image doit avoir des attributs :
+- `src`: lien vers le fichier image
 - `alt`: description de l'image
 
 <!-- .element: class="text-left" -->
 
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Multimedia_and_embedding/Images_in_HTML
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_images
 
 <!-- .element: class="credits" -->
 
@@ -288,8 +288,8 @@ Un élément peut contenir d'autres éléments imbriqués:
         consectetuer adipiscing elit. Sed
         non risus. Suspendisse lectus
         tortor, dignissim sit amet.</p>
-      <h2>2. Evolution</h2>
-      <p>orem ipsum dolor sit amet,</p>
+      <h2>2. Évolution</h2>
+      <p>Lorem ipsum dolor sit amet,</p>
       <h3>2.1 Stratégie</h3>
       <p>consectetuer adipiscing elit. Sed</p>
   </body>
@@ -327,8 +327,8 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
         consectetuer adipiscing elit. Sed
         non risus. Suspendisse lectus
         tortor, dignissim sit amet.</p>
-      <h2>2. Evolution</h2>
-      <p>orem ipsum dolor sit amet,</p>
+      <h2>2. Évolution</h2>
+      <p>Lorem ipsum dolor sit amet,</p>
       <h3>2.1 Stratégie</h3>
       <p>consectetuer adipiscing elit. Sed</p>
   </body>
@@ -352,7 +352,7 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 <!-- .element: class="html-preview output-right output-w-30" -->
 
 ```html
-<ol> <!-- orderer list -->
+<ol> <!-- ordered list -->
   <li>Mettre sur la balance</li>
   <li>Entrer le numéro</li>
 </ol>
@@ -374,7 +374,7 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 
 <!-- .element: class="html-preview output-right output-w-30" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/HTML_text_fundamentals#Listes
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Lists
 
 <!-- .element: class="credits" -->
 
@@ -395,7 +395,7 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/ol
   <li>Premier élément</li>
   <li>Deuxième élément  <!-- La balise </li>
                              n'est pas placée ici ! -->
-    <ul> <!-- Liste imrbiquée -->
+    <ul> <!-- Liste imbriquée -->
       <li>Premier élément de la liste non-ordonnée imbriquée</li>
       <li>Deuxième élément de la liste non-ordonnée imbriquée</li>
       <li>Troisième élément de la liste non-ordonnée imbriquée</li>
@@ -417,7 +417,7 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/ol
   <li>Premier élément</li>
   <li>Deuxième élément  <!-- La balise </li>
                              n'est pas placée ici ! -->
-    <ul> <!-- Liste imrbiquée -->
+    <ul> <!-- Liste imbriquée -->
       <li>Premier élément de la liste non-ordonnée imbriquée</li>
       <li>Deuxième élément de la liste non-ordonnée imbriquée</li>
       <li>Troisième élément de la liste non-ordonnée imbriquée</li>
@@ -487,7 +487,7 @@ Certains caractères spéciaux sont réservés pour une utilisation en HTML, ce 
  </tbody>
 </table>
 
-https://developer.mozilla.org/fr/docs/Glossaire/Entity
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#r%C3%A9f%C3%A9rences_dentit%C3%A9s_inclure_les_caract%C3%A8res_sp%C3%A9ciaux_en_html
 
 <!-- .element: class="credits" -->
 
@@ -534,22 +534,22 @@ Les fragments nécessaires pour construire une URL fonctionnelle dépendent du c
 
 **URL relative**
 
-Lorsqu'une URL est utilisée dans un document, on peut utiliser le contexte courrant pour en déduire certaines informations afin de compléter les URL contenues dans le document.
+Lorsqu'une URL est utilisée dans un document, on peut utiliser le contexte courant pour en déduire certaines informations afin de compléter les URL contenues dans le document.
 <!-- .element: class="small" -->
 
 **URL absolue**
 
-Si le chemin de l'URL commence par le symbole "/", le navigateur  cherche la ressource à la racine du serveur sans utiliser le contexte du document courant.
+Si le chemin de l'URL commence par le symbole "/", le navigateur cherche la ressource à la racine du serveur sans utiliser le contexte du document courant.
 <!-- .element: class="small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/Comprendre_les_URL
+https://developer.mozilla.org/fr/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL
 <!-- .element: class="credits" -->
 
 
 
 ### Exemples URL
 
-Depuis la page suivant: `https://www.site.com/products/sales/july/index.html`
+Depuis la page suivante : `https://www.site.com/products/sales/july/index.html`
 <!-- .element: class="smaller" -->
 
 <table style="font-size: 16px">
@@ -699,7 +699,7 @@ http://www.geeksengine.com/article/absolute-relative-path.html
 
 ```html
 <p>Plus d'information sur
-<a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks"
+<a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links"
    title="Page d'information sur les liens">les liens</a>.
 </p>
 ```
@@ -713,7 +713,7 @@ Un lien peut contenir une image
 ```
 <!-- .element: class="html-preview output-right output-w-20" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links
 <!-- .element: class="credits text-left" -->
 
 https://developer.mozilla.org/fr/docs/Web/HTML/Element/a
@@ -721,10 +721,10 @@ https://developer.mozilla.org/fr/docs/Web/HTML/Element/a
 
 
 
-### HTML Liens interne `<a>`
+### HTML Liens internes `<a>`
 
-Il est possible de faire un lien vers une partie donnée d'un document HTML (désignée du terme fragment de document), plutôt que juste le haut du document.
-Le nom de l'anchre (après le # pointe sur une id qui doit exister dans la page)
+Il est possible de faire un lien vers une partie donnée d'un document HTML (désignée par le terme fragment de document), plutôt que juste vers le haut du document.
+Le nom de l'ancre (après le `#`) pointe sur un `id` qui doit exister dans la page.
 
 ```html
 <a href="#bas">bas de la page</a>
@@ -735,7 +735,7 @@ Le nom de l'anchre (après le # pointe sur une id qui doit exister dans la page)
 <a id="bas" href="#top">haut de la page</a>
 ```
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links
 
 <!-- .element: class="credits" -->
 
@@ -777,12 +777,12 @@ Un tableau est un ensemble structuré de données (table de données) présenté
 
 ```html
 <table>
-  <tr> <!-- Tabe Row -->
-    <th>Matricule</th> <!-- Tabe Header -->
+  <tr> <!-- Table Row -->
+    <th>Matricule</th> <!-- Table Header -->
     <th>Note</th>
   </tr>
   <tr>
-    <td>4</td> <!-- Tabe Data -->
+    <td>4</td> <!-- Table Data -->
     <td>5</td>
   </tr>
   <tr>
@@ -798,7 +798,7 @@ Les tableaux HTML ne doivent être utilisés que pour des données tabulaires! P
 
 <!-- .element: class="warn small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Basics
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
 
 <!-- .element: class="credits" -->
 
@@ -832,7 +832,7 @@ https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Basics
 
 <!-- .element: class="html-preview output-right output-w-20 " -->
 
-Il faut que le compte soit bon! Sion des cellules du tableau vont dépasser
+Il faut que le compte soit bon! Sinon, des cellules du tableau vont dépasser.
 
 <!-- .element: class="warn small" -->
 
@@ -866,13 +866,13 @@ Il faut que le compte soit bon! Sion des cellules du tableau vont dépasser
 
 <!-- .element: class="html-preview output-right output-w-40" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Advanced
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
 
 <!-- .element: class="credits" -->
 
 
 
-### Structure avancée d'un tableaux
+### Structure avancée d'un tableau
 
 ![](images/table.png)
 
@@ -882,7 +882,7 @@ https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Advanced
 
 
 
-### Example: structure avancée d'un tableaux
+### Exemple : structure avancée d'un tableau
 
 ```html
 <table>

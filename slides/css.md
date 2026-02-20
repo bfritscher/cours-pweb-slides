@@ -35,7 +35,7 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 
 
 
-### Syntax CSS
+### Syntaxe CSS
 
 Un ensemble de règles CSS contenues dans une **feuille de style** détermine l'apparence d'une page Web.
 
@@ -43,7 +43,7 @@ Un ensemble de règles CSS contenues dans une **feuille de style** détermine 
 
 <!-- .element: class="center" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
@@ -55,13 +55,13 @@ https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_s
 
 <!-- .element: class="center" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
 
 
-### Comment appliquer les CSS aux HTML
+### Comment appliquer le CSS au HTML
 
 #### Externe `<link>` dans `<head>`
 
@@ -88,7 +88,7 @@ h1 {
 
 
 
-#### Interne: `<style>`dans `<head>`
+#### Interne: `<style>` dans `<head>`
 
 ```html
 <html>
@@ -138,7 +138,7 @@ Ne faites pas cela, à moins d'y être obligé !
 
 
 
-### Les selecteurs simples
+### Les sélecteurs simples
 
 Sélecteurs d'éléments `div, h1, p, …`
 ```css
@@ -170,7 +170,7 @@ Sélecteurs d'identifiants
 Un nom d'ID doit être unique dans le document.
 <!-- .element: class="warn" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Simple_selectors
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Basic_selectors
 <!-- .element: class="credits" -->
 
 
@@ -183,7 +183,7 @@ https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Simp
 | *		             | sélectionne tous les éléments.
 | aa *		         | sélectionne tous les éléments à l'intérieur d'un élément aa.
 | aa bb		         | sélectionne tous les éléments bb à l'intérieur d'un élément aa.
-| aa, bb	         | sélectionne tous les éléments aa et tousles éléments bb.
+| aa, bb	         | sélectionne tous les éléments aa et tous les éléments bb.
 | aa.classname	   | sélectionne tous les éléments aa avec le nom de classe classname.
 | #idname	         | sélectionne l'élément avec l'id idname.
 | a:hover	         | sélectionne l'élément a si la souris le survole (pseudo-classes).
@@ -191,8 +191,8 @@ https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Simp
 | aa + bb	         | sélectionne l'élément bb s'il est immédiatement précédé de aa.
 | aa ~ bb	         | sélectionne tous les éléments bb précédés d'un élément aa.
 | aa[attr="value"] | sélectionne l'élément aa avec un attribut attr="value".
-| :first-child     | sélectionne tous les éléments qui sont premier enfant.
-| :nth-child(A)    | sélectionne chaque élément qui est l'enfant Ath d'un autre élément.
+| :first-child     | sélectionne tous les éléments qui sont le premier enfant.
+| :nth-child(A)    | sélectionne chaque élément qui est le Ae enfant d'un autre élément.
 
 Visualization:
 [CSS Visualizer](https://fritscher.ch/dom-css/)
@@ -232,7 +232,7 @@ https://developer.mozilla.org/fr/docs/Web/CSS/Type_color
 
 
 
-### CSS formats des textes
+### CSS formats de texte
 
 ```css
 font-family: [Times New Roman, serif, Arial, sans-serif, Consolas, monospace];
@@ -242,7 +242,7 @@ font-weight: [normal, bold, 100-900];
 <span style="font-family: Times New Roman">Times New Roman,</span>
 <span style="font-family: Arial">Arial,</span>
 <span style="font-family: Consolas">Consolas,</span>
-<span>Open Sans est d'autres disponibles sur [WebFonts](https://fonts.google.com/)</span>.
+<span>Open Sans et d'autres sont disponibles sur [WebFonts](https://fonts.google.com/)</span>.
 
 <!-- .element class="small" -->
 
@@ -251,13 +251,13 @@ famille générique: serif, sans-serif, monospace
 famille spécifique: "Times New Roman", Times, Arial, Courrier, …
 <!-- .element class="smaller" -->
 
-Si une font n'est pas trouvé la plus proche sera choisie.
-Dans chrome computed style peremt de voir ce qui a réelement été utilisé.
+Si une police n'est pas trouvée, la plus proche sera choisie.
+Dans Chrome, l'onglet Computed style permet de voir ce qui a réellement été utilisé.
 <!-- .element class="smaller" -->
 
 
 
-### Taille de polices de caractères (fontes)
+### Taille de police de caractères (fontes)
 
 font-size: taille des caractères
 
@@ -273,7 +273,7 @@ Exemples:
 
 ```css
 font-size: 1.5em;   /*  150% de la largeur courante */
-font-size: 18pt;    /*  une taille fixe, quelque soit
+font-size: 18pt;    /*  une taille fixe, quelle que soit
                         l'agrandissement pratiqué par l'utilisateur. */
 ```
 
@@ -373,7 +373,7 @@ http://practicaltypography.com/
 
 <!-- .element: class="center" -->
 
-https://www.gcflearnfree.org/beginning-graphic-design/typography/1/
+https://www.learnfree.org/episode/beginning-graphic-design/?id=15254
 
 <!-- .element: class="smaller" -->
 
@@ -404,7 +404,7 @@ background-attachment: [scroll, fixed, local];
 
 ### Styles des liens (ancres `<a href=>`)
 
-Les liens sont importants pour la navigation: essentiel de les rendre **bien visibles**. On peut distinguer les différents états du lien avec des pseudo-classes:
+Les liens sont importants pour la navigation: il est essentiel de les rendre **bien visibles**. On peut distinguer les différents états du lien avec des pseudo-classes:
 <!-- .element: class="small" -->
 
 - a:link     - un lien normal, jamais visité,
@@ -422,7 +422,7 @@ a:hover { color:#FF00FF; } 
 a:active { color:#0000FF; }
 ```
 ```html
-<a href=#top>test</a>
+<a href="#top">test</a>
 ```
 <!-- .element: class="hide" -->
 
@@ -461,7 +461,7 @@ DOM (Document Object Model)
 
 ![](images/html_css_dom.svg)
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_fonctionnement_de_CSS
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
@@ -487,9 +487,9 @@ https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/
 
 1. importance
 2. particularité (Specificity)
-3. ordre dans le source
+3. ordre dans le document source
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
 <!-- .element: class="credits right" -->
 
 
@@ -543,11 +543,11 @@ div {
 
 Certaines valeurs de propriété appliquées à un élément seront héritées par les enfants de cet élément, et d'autres non.
 
-`font-family` et `color` soient hérités
+`font-family` et `color` sont hérités
 
 Alors que `margin`, `padding`, `border` et `background-image` ne sont pas hérités
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
 <!-- .element: class="credits" -->
 
 
@@ -570,7 +570,7 @@ center a block element: *margin: 0 auto*;
 
 <!-- .element: class="small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_mod%C3%A8le_de_bo%C3%AEte
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Box_model
 <!-- .element: class="credits" -->
 
 
@@ -674,14 +674,14 @@ Utiliser chrome dev-tools pour ajuster box-shadow.
  <li><strong>pied de page : </strong><a href="/fr/docs/Web/HTML/Element/footer" title="L'élément HTML <footer> représente le pied de page de la section ou de la racine de sectionnement la plus proche. Un pied de page ou de section contient habituellement des informations sur l'auteur de la section, les données relatives au droit d'auteur (copyright) ou les liens vers d'autres documents en relation."><code>&lt;footer&gt;</code></a>.</li>
 </ul>
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Document_and_website_structure
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
 <!-- .element: class="credits" -->
 
 
 
 ### Enveloppes non‑sémantiques
 
-DIV et SPAN avec un attribute class
+DIV et SPAN avec un attribut class
 
 Avertissement : les div sont si pratiques à utiliser qu'on est tenté de les utiliser à l'excès. Comme ils ne portent aucune valeur sémantique, ils encombrent votre code HTML. Prenez soin de ne les utiliser que s'il n'y a pas de meilleure solution sémantique et essayez de réduire leur utilisation au minimum sinon vous aurez du mal à mettre à jour et à maintenir vos documents.
 
@@ -709,13 +709,13 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 * **static** : par défaut, pas de positionnement spécial.
 * **fixed** : positionné relatif à la fenêtre du navigateur.
 * **absolute** : comme *fixed* mais relatif au parent positionné le plus proche.
-* **relative** : comme static mais influence les enfants absolut.
+* **relative** : comme static mais influence les enfants absolus.
 * **sticky** :  hybride entre position relative et position fixe : l'élément à positionner est en positionnement relatif jusqu'à un certain seuil.
 
 `top|right|bottom|left: <<units>>;`
-<br/>`z-index: <<int>>;` *change l'ordre des élements positionnés*
+<br/>`z-index: <<int>>;` *change l'ordre des éléments positionnés*
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Le_positionnement
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Positioning
 
 <!-- .element: class="credits" -->
 
@@ -794,7 +794,7 @@ footer{
 
 `clear: left|right|both;`
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Floats
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Floats
 
 <!-- .element: class="credits" -->
 
@@ -966,8 +966,7 @@ https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
 
 ![](images/media-queries.png)
 
-http://mediaqueri.es/spa/
-http://mediaqueri.es/int/
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Media_queries
 
 <!-- .element: class="credits" -->
 
@@ -1050,9 +1049,9 @@ Global CSS settings, fundamental HTML elements styled and enhanced with extensib
 Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.
 <!-- .element: class="smaller" -->
 
-**Javascript**
+**JavaScript**
 
-Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one. Or native javascript if using Boostrap.native.
+Bring Bootstrap's components to life with over a dozen custom jQuery plugins. Easily include them all, or one by one. Or native JavaScript if using Bootstrap.native.
 <!-- .element: class="smaller" -->
 
 Note:
@@ -1456,6 +1455,4 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 * http://tympanus.net/codrops/css_reference/
 * https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 * http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
-* http://css.sutterlity.fr/
 * http://fr.learnlayout.com/
-* https://developer.mozilla.org/fr/docs/CSS/Premiers_pas
