@@ -75,7 +75,7 @@ languages in the world**. [...]
 Most people in that situation **don’t even bother to
 learn JavaScript first**, and then they are surprised
 when JavaScript turns out to have significant
-differences from the some other language they would
+differences from some other language they would
 rather be using, and that those differences matter.
 
 <!-- .element: class="small" -->
@@ -165,7 +165,7 @@ typeof aString === 'string';
 typeof anObject === 'object';
 typeof anObject.aProperty === 'object';
 typeof anObject.foobar === 'undefined';
-// null is a type but
+// null is a type, but
 typeof null === 'object';
 ```
 <!-- .element: class="w-50 float-left" -->
@@ -205,7 +205,7 @@ const s3 = `Hello ${name}, how are you ${time}?`;
 | !== | Returns true if the operands are of the same type but not equal, or are of different type. |
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
-<!-- .elements class="credits" -->
+<!-- .element class="credits" -->
 
 
 
@@ -229,7 +229,7 @@ fruits.push('banana');
 
 // check if an array contains an element
 const inArray = fruits.indexOf('banana') > -1;
-const inArray = fruits.includes('banana'); // new in ES6
+const inArrayWithIncludes = fruits.includes('banana'); // new in ES6
 
 // remove 1 element from array
 const removed = fruits.splice(fruits.indexOf('pear'), 1);
@@ -284,7 +284,7 @@ if (name === "puppies") {
 name === "kittens!!"
 
 // ternary
-const  result = condition ? expression_if_true : expression_if_false
+const result = condition ? expression_if_true : expression_if_false;
 ```
 
 
@@ -325,7 +325,7 @@ singleParam => { statements }
 const addTwoNumbers = (a, b) => a + b;
 ```
 
-An arrow function does not create its own this context, so this has its original meaning from the enclosing context. => this behaves more like you might think
+An arrow function does not create its own `this` context, so `this` keeps its original meaning from the enclosing context.
 
 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/Fonctions_fl%C3%A9ch%C3%A9es
 
@@ -394,7 +394,7 @@ for (const key in person) {
 
 
 
-<p><video data-src="images/wat.mp4"></p>
+<p><video data-src="images/wat.mp4"></video></p>
 
 http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-bizarre-javascript-behaviours-mentioned-in-the
 
@@ -447,7 +447,7 @@ http://stackoverflow.com/questions/9032856/what-is-the-explanation-for-these-biz
 1. Generate a GitHub repository for you by  [clicking here](https://classroom.github.com/assignment-invitations/e525a7215a74ea0b9d1389dd2fbf0709)
 2. Clone the project and open it in VS Code
 3. In the project folder with the terminal run `npm install` to install dependencies
-4. Install [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) for VSCode
+4. Install [Mocha Test Explorer](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-mocha-test-adapter) for VS Code
 5. Write code to pass the tests
 6. Commit and push your changes
 7. Check your status on https://pweb.bf0.ch/
@@ -788,7 +788,7 @@ function onload() {
   for (const li of document.querySelectorAll('.list li')) {
     li.addEventListener('click', () => {
       li.classList.toggle('big');
-    })
+    });
   }
 }
 ```

@@ -152,7 +152,7 @@ When you're ready to deploy your site, you need to create an optimized "build".
 
 
 
-![](images/build_pipline.png)
+![](images/build_pipeline.png)
 
 
 
@@ -207,7 +207,7 @@ https://dzone.com/articles/the-comparison-of-single-page-and-multi-page-appli
 
 
 
-## Why Vue.Js?
+## Why Vue.js?
 
 <!-- https://codepen.io/jotavejv/pen/KgrXEa -->
 <style>
@@ -227,7 +227,7 @@ https://dzone.com/articles/the-comparison-of-single-page-and-multi-page-appli
 </div>
 
 - address many of the challenges encountered in developing SPA
-- large acceptation
+- wide adoption
 - decouple DOM manipulation from application logic
 - decouple the client side of an application from the server side
 - declarative programming for user interface
@@ -675,9 +675,9 @@ JavaScript Object Notation is a lightweight data-interchange format. It is easy 
 {
   "key_string": "hello",
   "key_number": 3,
-  "key_array": ["some text", 34]
+  "key_array": ["some text", 34],
   "key_object": {
-    "other_key": "value"
+    "other_key": "value",
     "key_boolean": true,
     "null possible": null
   }
@@ -908,9 +908,9 @@ import MyButton from './MyButton.vue'
 
 <!-- .element: class="float-right w-50" -->
 
-Component receive data through attributes binding by exposing properties.
+Components receive data through attribute bindings by exposing properties.
 
-Component send changes up to the parent by emiting events, to avoid mutations!
+Components send changes up to the parent by emitting events, to avoid mutations!
 
 
 
