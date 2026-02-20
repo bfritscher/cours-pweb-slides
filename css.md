@@ -43,7 +43,7 @@ Un ensemble de règles CSS contenues dans une **feuille de style** détermine 
 
 <!-- .element: class="center" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
@@ -55,7 +55,7 @@ https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_s
 
 <!-- .element: class="center" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
@@ -170,7 +170,7 @@ Sélecteurs d'identifiants
 Un nom d'ID doit être unique dans le document.
 <!-- .element: class="warn" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Simple_selectors
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Basic_selectors
 <!-- .element: class="credits" -->
 
 
@@ -373,7 +373,7 @@ http://practicaltypography.com/
 
 <!-- .element: class="center" -->
 
-https://www.gcflearnfree.org/beginning-graphic-design/typography/1/
+https://www.learnfree.org/episode/beginning-graphic-design/?id=15254
 
 <!-- .element: class="smaller" -->
 
@@ -461,7 +461,7 @@ DOM (Document Object Model)
 
 ![](images/html_css_dom.svg)
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_fonctionnement_de_CSS
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS
 <!-- .element: class="credits" -->
 
 
@@ -489,7 +489,7 @@ https://hacks.mozilla.org/2017/05/quantum-up-close-what-is-a-browser-engine/
 2. particularité (Specificity)
 3. ordre dans le document source
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
 <!-- .element: class="credits right" -->
 
 
@@ -547,7 +547,7 @@ Certaines valeurs de propriété appliquées à un élément seront héritées p
 
 Alors que `margin`, `padding`, `border` et `background-image` ne sont pas hérités
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
 <!-- .element: class="credits" -->
 
 
@@ -570,7 +570,7 @@ center a block element: *margin: 0 auto*;
 
 <!-- .element: class="small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/Introduction_%C3%A0_CSS/Le_mod%C3%A8le_de_bo%C3%AEte
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Box_model
 <!-- .element: class="credits" -->
 
 
@@ -674,7 +674,7 @@ Utiliser chrome dev-tools pour ajuster box-shadow.
  <li><strong>pied de page : </strong><a href="/fr/docs/Web/HTML/Element/footer" title="L'élément HTML <footer> représente le pied de page de la section ou de la racine de sectionnement la plus proche. Un pied de page ou de section contient habituellement des informations sur l'auteur de la section, les données relatives au droit d'auteur (copyright) ou les liens vers d'autres documents en relation."><code>&lt;footer&gt;</code></a>.</li>
 </ul>
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Document_and_website_structure
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
 <!-- .element: class="credits" -->
 
 
@@ -715,7 +715,7 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 `top|right|bottom|left: <<units>>;`
 <br/>`z-index: <<int>>;` *change l'ordre des éléments positionnés*
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Le_positionnement
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Positioning
 
 <!-- .element: class="credits" -->
 
@@ -794,7 +794,7 @@ footer{
 
 `clear: left|right|both;`
 
-https://developer.mozilla.org/fr/docs/Apprendre/CSS/CSS_layout/Floats
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Floats
 
 <!-- .element: class="credits" -->
 
@@ -966,8 +966,7 @@ https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
 
 ![](images/media-queries.png)
 
-http://mediaqueri.es/spa/
-http://mediaqueri.es/int/
+https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Media_queries
 
 <!-- .element: class="credits" -->
 
@@ -1456,6 +1455,4 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 * http://tympanus.net/codrops/css_reference/
 * https://developer.mozilla.org/fr/docs/Web/CSS/Reference
 * http://www.w3.org/Style/css3-selectors-updates/WD-css3-selectors-20010126.fr.html
-* http://css.sutterlity.fr/
 * http://fr.learnlayout.com/
-* https://developer.mozilla.org/fr/docs/CSS/Premiers_pas

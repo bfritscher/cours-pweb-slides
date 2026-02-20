@@ -9,19 +9,23 @@ const positionalArgs = args.filter(arg => !arg.startsWith('--'));
 const rootDir = positionalArgs[0] ? path.resolve(positionalArgs[0]) : process.cwd();
 const timeoutMs = Number(positionalArgs[1] || 10000);
 
-function walkMarkdownFiles(dirPath) {
+function walkMarkdownFiles(dirPath, seenFilePaths = new Set()) {
     const entries = fs.readdirSync(dirPath, { withFileTypes: true });
     const files = [];
 
     for (const entry of entries) {
         const fullPath = path.join(dirPath, entry.name);
         if (entry.isDirectory()) {
-            files.push(...walkMarkdownFiles(fullPath));
+            files.push(...walkMarkdownFiles(fullPath, seenFilePaths));
             continue;
         }
 
         if (entry.isFile() && entry.name.toLowerCase().endsWith('.md')) {
-            files.push(fullPath);
+            const normalizedPath = path.resolve(fullPath).toLowerCase();
+            if (!seenFilePaths.has(normalizedPath)) {
+                seenFilePaths.add(normalizedPath);
+                files.push(fullPath);
+            }
         }
     }
 
@@ -31,22 +35,62 @@ function walkMarkdownFiles(dirPath) {
 function normalizeCandidate(rawUrl) {
     return rawUrl
         .trim()
-        .replace(/[)>\]}"'.,;:!?]+$/g, '');
+    .replace(/[)>\]}"'`.,;:!?]+$/g, '')
+    .replace(/^<+|>+$/g, '');
 }
 
-function extractUrls(content) {
+function extractUrlOccurrences(content) {
     const regex = /https?:\/\/[^\s<>(){}\[\]"']+/gi;
-    const urls = new Set();
+    const occurrences = [];
+
+    const lineStarts = [0];
+    for (let index = 0; index < content.length; index += 1) {
+        if (content[index] === '\n') {
+            lineStarts.push(index + 1);
+        }
+    }
+
+    function getLineNumber(charIndex) {
+        let low = 0;
+        let high = lineStarts.length - 1;
+
+        while (low <= high) {
+            const middle = Math.floor((low + high) / 2);
+            if (lineStarts[middle] <= charIndex) {
+                low = middle + 1;
+            } else {
+                high = middle - 1;
+            }
+        }
+
+        return high + 1;
+    }
+
     let match;
 
     while ((match = regex.exec(content)) !== null) {
         const normalized = normalizeCandidate(match[0]);
         if (normalized) {
-            urls.add(normalized);
+            occurrences.push({
+                url: normalized,
+                line: getLineNumber(match.index)
+            });
         }
     }
 
-    return [...urls];
+    return occurrences;
+}
+
+function formatLocations(locationMap) {
+    const formatted = [];
+    const files = [...locationMap.keys()].sort();
+
+    for (const file of files) {
+        const lines = [...new Set(locationMap.get(file))].sort((a, b) => a - b);
+        formatted.push(`${file}:${lines.join(',')}`);
+    }
+
+    return formatted.join(' | ');
 }
 
 async function fetchWithTimeout(url, options, timeout) {
@@ -90,22 +134,30 @@ async function main() {
         process.exit(2);
     }
 
-    const markdownFiles = walkMarkdownFiles(rootDir);
-    const urlToFiles = new Map();
+    const markdownFiles = walkMarkdownFiles(rootDir)
+        .sort((a, b) => a.localeCompare(b));
+    const urlToLocations = new Map();
 
     for (const filePath of markdownFiles) {
         const content = fs.readFileSync(filePath, 'utf8');
-        const urls = extractUrls(content);
+        const occurrences = extractUrlOccurrences(content);
+        const relativeFilePath = path.relative(rootDir, filePath);
 
-        for (const url of urls) {
-            if (!urlToFiles.has(url)) {
-                urlToFiles.set(url, new Set());
+        for (const occurrence of occurrences) {
+            if (!urlToLocations.has(occurrence.url)) {
+                urlToLocations.set(occurrence.url, new Map());
             }
-            urlToFiles.get(url).add(path.relative(rootDir, filePath));
+
+            const locationMap = urlToLocations.get(occurrence.url);
+            if (!locationMap.has(relativeFilePath)) {
+                locationMap.set(relativeFilePath, []);
+            }
+
+            locationMap.get(relativeFilePath).push(occurrence.line);
         }
     }
 
-    const uniqueUrls = [...urlToFiles.keys()];
+    const uniqueUrls = [...urlToLocations.keys()];
     if (uniqueUrls.length === 0) {
         console.log('No absolute http/https URLs found in markdown files.');
         return;
@@ -114,15 +166,22 @@ async function main() {
     console.log(`Checking ${uniqueUrls.length} unique URL(s) from ${markdownFiles.length} markdown file(s)...\n`);
 
     const results = [];
+    const emittedLogSignatures = new Set();
     for (const url of uniqueUrls) {
         const result = await checkUrl(url);
         results.push(result);
-        const files = [...(urlToFiles.get(url) || [])].join(', ');
+        const locations = formatLocations(urlToLocations.get(url) || new Map());
+        const signature = `${result.ok ? 'OK' : 'BAD'}|${result.status}|${result.statusText}|${url}|${locations}`;
+
+        if (emittedLogSignatures.has(signature)) {
+            continue;
+        }
+        emittedLogSignatures.add(signature);
 
         if (!result.ok) {
-            console.log(`[BAD] ${result.status} ${result.statusText} - ${url} | file(s): ${files}`);
+            console.log(`[BAD] ${result.status} ${result.statusText} - ${url} | locations: ${locations}`);
         } else if (showAll) {
-            console.log(`[OK] ${result.status} ${result.statusText} - ${url}`);
+            console.log(`[OK] ${result.status} ${result.statusText} - ${url} | locations: ${locations}`);
         }
     }
 

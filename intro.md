@@ -47,7 +47,7 @@
 
 <!-- .element: class="w-50 float-left center" -->
 
-[![](images/Evolution_of_the_web.jpg)](http://www.evolutionoftheweb.com/)
+[![](images/Evolution_of_the_web.jpg)](https://web.archive.org/web/20210129140625/http://www.evolutionoftheweb.com/)
 
 <!-- .element: class="center" -->
 

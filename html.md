@@ -139,7 +139,7 @@ Une page HTML = un ensemble d’éléments de contenu encadrés par des balises 
 
 <!-- .element: class="center" -->
 
-[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started)
+[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax)
 
 
 
@@ -203,7 +203,7 @@ Une balise peut avoir des attributs `nom_attribut="valeur"`:
 
 ![](images/attribut-chat-grincheux.png)
 
-[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Getting_started)
+[MDN - Commencer avec le HTML](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax)
 
 <!-- .element: class="credits" -->
 
@@ -238,7 +238,7 @@ La balise image doit avoir des attributs :
 <!-- .element: class="text-left" -->
 
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Multimedia_and_embedding/Images_in_HTML
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_images
 
 <!-- .element: class="credits" -->
 
@@ -374,7 +374,7 @@ https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka
 
 <!-- .element: class="html-preview output-right output-w-30" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/HTML_text_fundamentals#Listes
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Lists
 
 <!-- .element: class="credits" -->
 
@@ -487,7 +487,7 @@ Certains caractères spéciaux sont réservés pour une utilisation en HTML, ce 
  </tbody>
 </table>
 
-https://developer.mozilla.org/fr/docs/Glossaire/Entity
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax#r%C3%A9f%C3%A9rences_dentit%C3%A9s_inclure_les_caract%C3%A8res_sp%C3%A9ciaux_en_html
 
 <!-- .element: class="credits" -->
 
@@ -542,7 +542,7 @@ Lorsqu'une URL est utilisée dans un document, on peut utiliser le contexte cour
 Si le chemin de l'URL commence par le symbole "/", le navigateur cherche la ressource à la racine du serveur sans utiliser le contexte du document courant.
 <!-- .element: class="small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/Comprendre_les_URL
+https://developer.mozilla.org/fr/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL
 <!-- .element: class="credits" -->
 
 
@@ -699,7 +699,7 @@ http://www.geeksengine.com/article/absolute-relative-path.html
 
 ```html
 <p>Plus d'information sur
-<a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks"
+<a href="https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links"
    title="Page d'information sur les liens">les liens</a>.
 </p>
 ```
@@ -713,7 +713,7 @@ Un lien peut contenir une image
 ```
 <!-- .element: class="html-preview output-right output-w-20" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links
 <!-- .element: class="credits text-left" -->
 
 https://developer.mozilla.org/fr/docs/Web/HTML/Element/a
@@ -735,7 +735,7 @@ Le nom de l'ancre (après le `#`) pointe sur un `id` qui doit exister dans la pa
 <a id="bas" href="#top">haut de la page</a>
 ```
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Introduction_%C3%A0_HTML/Creating_hyperlinks
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Creating_links
 
 <!-- .element: class="credits" -->
 
@@ -798,7 +798,7 @@ Les tableaux HTML ne doivent être utilisés que pour des données tabulaires! P
 
 <!-- .element: class="warn small" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Basics
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
 
 <!-- .element: class="credits" -->
 
@@ -866,7 +866,7 @@ Il faut que le compte soit bon! Sinon, des cellules du tableau vont dépasser.
 
 <!-- .element: class="html-preview output-right output-w-40" -->
 
-https://developer.mozilla.org/fr/docs/Apprendre/HTML/Tableaux/Advanced
+https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
 
 <!-- .element: class="credits" -->
 

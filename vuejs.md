@@ -169,7 +169,7 @@ Continuous Integration/Continuous Deployment (CI/CD) automates the process of bu
 # Epic 0
 ##  Create the project backlog
 
-- Create GitHub repository [here](https://classroom.github.com/a/HEaOY67z)
+- Create GitHub repository [here](https://classroom.github.com/a/HEaOY67z) TODO ??
 - Then click projects > new project > templates > Kanban
 - Wait for issue creation
 
@@ -1331,11 +1331,10 @@ Most API require additional header in addition of other request than GET.
 
 ## API with real data
 
-- https://countapi.xyz/
 - https://docs.thedogapi.com/
 - https://docs.thecatapi.com/
 - https://transport.opendata.ch/docs.html
-- http://api.themoviedb.org/3/ //need proxy for api key or cors
+- http://api.themoviedb.org/
 - https://www.themealdb.com/api.php
 - https://www.thecocktaildb.com/api.php
 
