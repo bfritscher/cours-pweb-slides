@@ -267,6 +267,7 @@ Un élément peut contenir d'autres éléments imbriqués:
 ### Exemple d'une page
 
 ![](images/rapport_activite.png)
+<!-- .element: class="w-80" -->
 
 
 
