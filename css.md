@@ -1441,6 +1441,8 @@ Alternatives: Bootstrap, Foundation, Material Design libraries, UIKit, ...
 
 <!-- .slide: data-background-image="images/background_code.webp" -->
 
+## [CSS Bootstrap Grid](https://github.com/bfritscher/cours-html-exercices/tree/master/CSS_Bootstrap_Grid)
+
 ## [CSS Bootstrap](https://github.com/bfritscher/cours-html-exercices/tree/master/CSS_Bootstrap)
 <!-- .element: class="text-white" -->
 
