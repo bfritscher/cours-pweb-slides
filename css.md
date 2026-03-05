@@ -836,7 +836,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 https://philipwalton.github.io/solved-by-flexbox/
 <!-- .element: class="smaller" -->
-https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+https://developer.mozilla.org/fr/docs/Web/CSS/Guides/Flexible_box_layout/Basic_concepts
 <!-- .element: class="smaller" -->
 
 
@@ -932,7 +932,7 @@ Lets the presentation of content be **tailored** to a specific range of output d
 
 **rules:** min-width, max-width, min-device-width, max-device-width, orientation: [landscape | portrait], ...
 
-https://developer.mozilla.org/fr/docs/Web/CSS/Media_queries
+https://developer.mozilla.org/fr/docs/Web/CSS/Guides/Media_queries
 
 
 
